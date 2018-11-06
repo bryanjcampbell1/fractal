@@ -7,13 +7,32 @@
 
 .cell {
   /*background: dodgerblue;*/
-  background: #1779ba;
+  /*background: #1779ba;*/
   line-height: 50px;
   height: 50px;
-  color: white;
+  color: black;
   text-align: center;
   margin-bottom: 8px;
 }
 .cell:nth-child(odd) {
+  /*background: #37a0e6;*/
+}
+
+.wack {
   background: #37a0e6;
+}
+.headerDivider {
+
+     border-right:2px solid dimgrey;
+     height:80px;
+     position:relative;
+     right:10px;
+     top:-40px;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

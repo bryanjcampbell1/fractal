@@ -387,7 +387,7 @@
 
     <div class="navMenuItem" id="EditProfilePage" >
       <div class="grid-x">
-        <div class="cell small-12 medium-12" style="height: 1500px;">
+        <div class="cell small-10 medium-10" style="height: 1500px;">
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Profile Picture</h4>
             <img src="./pics/bigHead.png" style="height:150px;width:150px;float:left;"></img>
@@ -395,12 +395,11 @@
           </div>
           <div style="padding:1em;height:250px;">
             <h4 style="text-align:left;">Bio</h4>
-            <textarea style="padding:1em;width:800px;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
+            <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
           </div>
-
         <div style="padding:1em;height:200px;">
           <h4 style="text-align:left;">Skills</h4>
-          <input style="width:800px;" type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
+          <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
           <div>
             <div class="callout warning label"  style="padding: 1em;width:120px;height:50px;text-align:left;float:left;" data-closable>
               <button class="close-button" aria-label="Close alert" type="button" data-close>
@@ -410,7 +409,6 @@
             </div>
           </div>
         </div>
-
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
             <label style="text-align:left;">Company or Project Name
@@ -420,9 +418,8 @@
               <input type="text" placeholder="Web Address or Company Code" aria-describedby="exampleHelpText">
             </label>
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
-
           </div>
-          <div style="padding:1em;height:350px;">
+          <div style="padding:1em;height:250px;">
             <div class="callout" data-closable>
               <button class="close-button" aria-label="Close alert" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
@@ -436,14 +433,119 @@
               <p style="text-align:left;">TonyTheTigerINC</p>
             </div>
           </div>
-
+          <div style="padding:1em;height:300px;">
+            <h4 style="text-align:left;">Add External Link</h4>
+            <label style="text-align:left;">Link Title
+              <input type="text" placeholder="Github, Pintrest, Twitter, ect." aria-describedby="exampleHelpText">
+            </label>
+            <label style="text-align:left;">Link
+              <input type="text" placeholder="www.example.com/me" aria-describedby="exampleHelpText">
+            </label>
+            <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
+          </div>
+          <div style="padding:1em;height:350px;">
+            <div class="callout" data-closable>
+              <button class="close-button" aria-label="Close alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <p style="text-align:left;">Github</p>
+            </div>
+            <div class="callout" data-closable>
+              <button class="close-button" aria-label="Close alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <p style="text-align:left;">Twitter</p>
+            </div>
+          </div>
         </div>
-
+        <div class="cell auto" style="height: 1500px;"></div>
       </div>
     </div>
 
     <div class="navMenuItem" id="SearchProfilesPage" >
-       search profiles page
+      <div class="grid-x">
+        <div class="cell small-3 medium-3" style="padding: 15px;text-align:left;height: 600px;">
+          <h4>Search Jobs</h4>
+          <form>
+            <label>Category
+              <select>
+                <option value="Category">All Categories</option>
+                <option value="starbuck">Accounting</option>
+                <option value="hotdog">AWS</option>
+                <option value="apollo">Back End Design</option>
+                <option value="apollo">Bookkeeping</option>
+                <option value="starbuck">Cloud</option>
+                <option value="hotdog">Coding</option>
+                <option value="starbuck">Copywrite</option>
+                <option value="apollo">Data Analytics</option>
+                <option value="apollo">Front End Design</option>
+                <option value="starbuck">Graphic Design</option>
+                <option value="apollo">Legal</option>
+                <option value="hotdog">Marketing</option>
+                <option value="hotdog">Mobile</option>
+                <option value="hotdog">Mockups</option>
+                <option value="apollo">Strategy</option>
+                <option value="apollo">Simulation</option>
+                <option value="starbuck">Translation</option>
+                <option value="hotdog">UX/UI</option>
+                <option value="apollo">Web Design</option>
+              </select>
+            </label>
+
+            <label>Required Skills
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Minimum Rating
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Hourly Rate
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Country
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Language
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+
+            <input type="submit" class="expanded button" value="Search">
+
+          </form>
+        </div>
+        <div class="cell small-9 medium-9" style="text-align:left;padding: 15px;height: 600px;">
+          <h4>Find a Freelancer</h4>
+          <input type="search" placeholder="Search" aria-describedby="exampleHelpText">
+          <table>
+            <thead>
+              <tr>
+                <th width="200">Company</th>
+                <th>Job Description</th>
+                <th width="150">Compensation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Web designer needed for landing page.  Exciting personal cloud project!</td>
+                <td style="text-align:center;">250 BAE</td>
+              </tr>
+              <tr>
+                <td><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Logo design for online store. </td>
+                <td style="text-align:center;">350 BAE</td>
+              </tr>
+              <tr>
+                <td><img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Backend for mobile app. Peer to peer lending service for new ghome buyers.</td>
+                <td style="text-align:center;">220 BAE</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+
     </div>
 
 
@@ -754,12 +856,121 @@
       </div>
     </div>
 
+
     <div class="navMenuItem" id="CreateCompanyPage" >
-       CreateCompanyPage
+      <div class="grid-x">
+        <div class="cell small-10 medium-10" style="height: 1500px;">
+          <div style="padding:1em;height:200px;">
+            <h4 style="text-align:left;">Logo</h4>
+            <img src="./pics/logo2.png" style="height:150px;width:150px;float:left;"></img>
+            <button class="button" style="float:left;margin-left:2em;">Upload New Logo</button>
+          </div>
+          <div style="padding:1em;height:250px;">
+            <h4 style="text-align:left;">Elevator Pitch</h4>
+            <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
+          </div>
+          <div>
+            <h4 style="text-align:left;">Add Website</h4>
+            <label style="text-align:left;">Link Title
+              <input type="text" placeholder="Github, Pintrest, Twitter, ect." aria-describedby="exampleHelpText">
+            </label>
+            <label style="text-align:left;">Link
+              <input type="text" placeholder="www.example.com/me" aria-describedby="exampleHelpText">
+            </label>
+            <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
+          </div>
+
+
+
+        <div class="cell auto" style="height: 1500px;"></div>
+      </div>
     </div>
+  </div>
 
     <div class="navMenuItem" id="SearchCompaniesPage" >
-       SearchCompaniesPage
+      <div class="grid-x">
+        <div class="cell small-3 medium-3" style="padding: 15px;text-align:left;height: 600px;">
+          <h4>Search Jobs</h4>
+          <form>
+            <label>Category
+              <select>
+                <option value="Category">All Categories</option>
+                <option value="starbuck">Accounting</option>
+                <option value="hotdog">AWS</option>
+                <option value="apollo">Back End Design</option>
+                <option value="apollo">Bookkeeping</option>
+                <option value="starbuck">Cloud</option>
+                <option value="hotdog">Coding</option>
+                <option value="starbuck">Copywrite</option>
+                <option value="apollo">Data Analytics</option>
+                <option value="apollo">Front End Design</option>
+                <option value="starbuck">Graphic Design</option>
+                <option value="apollo">Legal</option>
+                <option value="hotdog">Marketing</option>
+                <option value="hotdog">Mobile</option>
+                <option value="hotdog">Mockups</option>
+                <option value="apollo">Strategy</option>
+                <option value="apollo">Simulation</option>
+                <option value="starbuck">Translation</option>
+                <option value="hotdog">UX/UI</option>
+                <option value="apollo">Web Design</option>
+              </select>
+            </label>
+
+            <label>Required Skills
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Minimum Rating
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Hourly Rate
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Country
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+            <label>Language
+              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+            </label>
+
+            <input type="submit" class="expanded button" value="Search">
+
+          </form>
+        </div>
+        <div class="cell small-9 medium-9" style="text-align:left;padding: 15px;height: 600px;">
+          <h4>Find a Freelancer</h4>
+          <input type="search" placeholder="Search" aria-describedby="exampleHelpText">
+          <table>
+            <thead>
+              <tr>
+                <th width="200">Company</th>
+                <th>Job Description</th>
+                <th width="150">Compensation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Web designer needed for landing page.  Exciting personal cloud project!</td>
+                <td style="text-align:center;">250 BAE</td>
+              </tr>
+              <tr>
+                <td><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Logo design for online store. </td>
+                <td style="text-align:center;">350 BAE</td>
+              </tr>
+              <tr>
+                <td><img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>Backend for mobile app. Peer to peer lending service for new ghome buyers.</td>
+                <td style="text-align:center;">220 BAE</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+
     </div>
 
     <div class="navMenuItem" id="TokenizeSharesPage" >

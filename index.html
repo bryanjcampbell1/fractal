@@ -130,11 +130,6 @@
 
     </div>
 
-
-
-
-
-
     <div class="navMenuItem" id="HomePage" >
        <div class="grid-x">
          <div class="cell" style="color:#37a0e6;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 80px;height: 120px;background-size: cover;background-image: url('./pics/diffract.jpg');">
@@ -172,12 +167,9 @@
        <div class="grid-x" >
          <div class="cell small-3 medium-3" style="height: 900px;padding: 15px;">
            <div class="grid-x">
-             <div class="cell small-9 medium-9" style="height: 200px;">
-                <div style="margin-left: 30px;margin-top: 20px;height: 125px;width:95px;background-image: url('./pics/addUser.png');">
-                </div>
-                 <h5>Name/Username</h5>
-                 <h6>kingSnackMan</h6>
-
+             <div class="cell small-9 medium-9" style="height: 175px;">
+                <div style="margin-top: 20px;height: 110px;width:85px;background-size:cover;background-image: url('./pics/addUser.png');"></div>
+                 <h6 style="text-align:left;margin-top:15px;">kingSnackMan</h6>
              </div>
              <div class="cell small-3 medium-3" style="height: 100px;"></div>
              <div class="cell small-12 medium-12" style="text-align:left;">
@@ -216,26 +208,32 @@
          <div class="cell small-9 medium-9" style="height: 900px;">
            <div class="grid-x">
              <div class="cell small-2 medium-2" style="height: 100px;"></div>
-             <div class="cell small-10 medium-10" style="height: 100px;">
-               <div class="grid-x" style="background:gray;">
+             <div class="cell small-10 medium-10" style="height: 100px;background-size:cover;background-image: url('./pics/divider3.png');">
+               <div class="grid-x" >
 
 
                  <div class="cell auto" style="height: 100px;">
-                   <i class="fi-mail" style="font-size: 60px;"></i>
-
-                   <div class="headerDivider"></div>
-                 </div>
-                 <div class="cell auto" style="height: 100px;"> Submit
-                   <div class="headerDivider"></div>
-                 </div>
-                 <div class="cell auto" style="height: 100px;"> Review
-                   <div class="headerDivider"></div>
+                   <i class="fi-mail" style="font-size: 50px;"></i>
+                   <h6>Messages</h6>
                  </div>
                  <div class="cell auto" style="height: 100px;">
-                   <i class="fi-clock" style="font-size: 60px;"></i>
-                   <div class="headerDivider"></div>
+                   <i class="fi-upload" style="font-size: 50px;"></i>
+                   <h6>Submit</h6>
+
                  </div>
-                 <div class="cell auto" style="height: 100px;"> Alerts</div>
+                 <div class="cell auto" style="height: 100px;">
+                   <i class="fi-check" style="font-size: 50px;"></i>
+                   <h6>Review</h6>
+
+                 </div>
+                 <div class="cell auto" style="height: 100px;">
+                   <i class="fi-clock" style="font-size: 50px;"></i>
+                   <h6>Timeline</h6>
+                 </div>
+                 <div class="cell auto" style="height: 100px;">
+                   <i class="fi-alert" style="font-size: 50px;"></i>
+                   <h6>Alerts</h6>
+                 </div>
                </div>
              </div>
              <div class="cell" style="height: 500px;">
@@ -673,10 +671,8 @@
               </select>
             </label>
 
-            <label>Required Skills
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
-            <label>Minimum Rating
+
+            <label>Minimum Employer Rating
               <input type="text" placeholder="" aria-describedby="exampleHelpText">
             </label>
             <label>Hourly Rate
@@ -694,7 +690,7 @@
           </form>
         </div>
         <div class="cell small-9 medium-9" style="text-align:left;padding: 15px;height: 600px;">
-          <h4>Find a Freelancer</h4>
+          <h4>Search by Keyword</h4>
           <input type="search" placeholder="Search" aria-describedby="exampleHelpText">
           <table>
             <thead>
@@ -882,54 +878,85 @@
 
 
 
-        <div class="cell auto" style="height: 1500px;"></div>
+          <div class="cell auto" style="height: 1500px;"></div>
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="navMenuItem" id="SearchCompaniesPage" >
       <div class="grid-x">
         <div class="cell small-3 medium-3" style="padding: 15px;text-align:left;height: 600px;">
-          <h4>Search Jobs</h4>
+          <h4>Search Companies</h4>
           <form>
             <label>Category
               <select>
                 <option value="Category">All Categories</option>
-                <option value="starbuck">Accounting</option>
-                <option value="hotdog">AWS</option>
-                <option value="apollo">Back End Design</option>
-                <option value="apollo">Bookkeeping</option>
-                <option value="starbuck">Cloud</option>
-                <option value="hotdog">Coding</option>
-                <option value="starbuck">Copywrite</option>
-                <option value="apollo">Data Analytics</option>
-                <option value="apollo">Front End Design</option>
-                <option value="starbuck">Graphic Design</option>
-                <option value="apollo">Legal</option>
-                <option value="hotdog">Marketing</option>
-                <option value="hotdog">Mobile</option>
-                <option value="hotdog">Mockups</option>
-                <option value="apollo">Strategy</option>
-                <option value="apollo">Simulation</option>
-                <option value="starbuck">Translation</option>
-                <option value="hotdog">UX/UI</option>
-                <option value="apollo">Web Design</option>
+                <option value="starbuck">Agriculture</option>
+                <option value="starbuck">Artificial Intelligence</option>
+                <option value="hotdog">Automotive</option>
+                <option value="apollo">Aviation</option>
+                <option value="apollo">Biotechnology</option>
+                <option value="apollo">Building Materials</option>
+                <option value="starbuck">Camera</option>
+                <option value="starbuck">Cannabis</option>
+                <option value="hotdog">Chemical</option>
+                <option value="starbuck">Cloud Computing</option>
+                <option value="starbuck">Clothing</option>
+                <option value="apollo">Cosmetics</option>
+                <option value="starbuck">Cryptocurrency</option>
+                <option value="apollo">Defence</option>
+                <option value="apollo">Distributors</option>
+                <option value="starbuck">Education</option>
+                <option value="apollo">Electronics</option>
+                <option value="apollo">Energy</option>
+                <option value="apollo">Engineering</option>
+                <option value="hotdog">Entertainment</option>
+                <option value="hotdog">Farms</option>
+                <option value="hotdog">FinancialTechnology</option>
+                <option value="hotdog">Fishing</option>
+                <option value="apollo">Food</option>
+                <option value="apollo">Geophysical</option>
+                <option value="hotdog">GIS</option>
+                <option value="hotdog">Glassmaking</option>
+                <option value="starbuck">Hemp</option>
+                <option value="hotdog">Horticultural</option>
+                <option value="hotdog">Information Technology</option>
+                <option value="apollo">Land Development</option>
+                <option value="starbuck">Laundry</option>
+                <option value="apollo">Logistics</option>
+                <option value="apollo">Manufacturing</option>
+                <option value="starbuck">Media</option>
+                <option value="apollo">Mining</option>
+                <option value="hotdog">Mobile Technology</option>
+                <option value="hotdog">Packaging</option>
+                <option value="hotdog">Plastics</option>
+                <option value="hotdog">Publishing</option>
+                <option value="hotdog">Radio-Frequency Identification</option>
+                <option value="apollo">Real Estate</option>
+                <option value="apollo">Renewable Energy</option>
+                <option value="starbuck">Retail</option>
+                <option value="hotdog">Sanitation</option>
+                <option value="hotdog">Semantic Web</option>
+                <option value="hotdog">Semiconductor</option>
+                <option value="apollo">Service</option>
+                <option value="apollo">Signage</option>
+                <option value="hotdog">Social Media</option>
+                <option value="hotdog">Software</option>
+                <option value="starbuck">Sports</option>
+                <option value="hotdog">Storage</option>
+                <option value="apollo">Technology</option>
+                <option value="starbuck">Textile</option>
+                <option value="apollo">Tourism</option>
+                <option value="apollo">Type Foundries</option>
+                <option value="hotdog">Vehicle</option>
+                <option value="hotdog">Virtual Reality</option>
+                <option value="starbuck">Other</option>
               </select>
-            </label>
-
-            <label>Required Skills
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
             </label>
             <label>Minimum Rating
               <input type="text" placeholder="" aria-describedby="exampleHelpText">
             </label>
-            <label>Hourly Rate
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
             <label>Country
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
-            <label>Language
               <input type="text" placeholder="" aria-describedby="exampleHelpText">
             </label>
 
@@ -938,7 +965,7 @@
           </form>
         </div>
         <div class="cell small-9 medium-9" style="text-align:left;padding: 15px;height: 600px;">
-          <h4>Find a Freelancer</h4>
+          <h4>Search by Company Name or Category</h4>
           <input type="search" placeholder="Search" aria-describedby="exampleHelpText">
           <table>
             <thead>

@@ -5,6 +5,33 @@
   display: block;
 }
 
+
+.mailMenuItem {
+  display: none;
+}
+.mailMenuItem .is-shown {
+  display: block;
+}
+
+#HomePage {
+  display: block;
+}
+#messagesTable {
+  display: block;
+}
+#submitTable {
+  display: none;
+}
+#reviewTable {
+  display: none;
+}
+#timelineTable {
+  display: none;
+}
+#alertsTable {
+  display: none;
+}
+
 .cell {
   /*background: dodgerblue;*/
 /*  background: #1779ba;*/

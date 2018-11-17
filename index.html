@@ -99,6 +99,21 @@
         });
 
 
+
+
+        /*--------------------*/
+
+
+        $("#viewJobs").click(function(){
+          $("#HomePage").hide();
+          $("#SearchJobsPage").show();
+        });
+
+        $("#findFreelancer").click(function(){
+          $("#HomePage").hide();
+          $("#PostJobsPage").show();
+        });
+
         /*--------------------*/
         $("#messagesButton").click(function(){
             $(".mailMenuItem").hide();
@@ -207,7 +222,7 @@
 
       <div style="height: 15px;background-color:#00009aff;"></div>
 
-      <div id="personalHomepage" style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/redGrad2.png');">
+      <div id="personalHomepage" style="padding:20px;text-align: center; height: 580px;background-size: cover;background-image: url('./pics/redGrad2.png');">
 
           <p style="font-size:45px;color:black;text-align:center;">
             Get paid for work with private share backed crypto.
@@ -218,8 +233,8 @@
           </p>
 
           <div style="width:480px;margin-top: 10%;margin-left: calc(50% - 240px);">
-            <button class="button" style="width:230px;text-align:center;float:left;">VIEW JOBS</button>
-            <button class="button" style="width:230px;text-align:center;float:right;">CREATE PROFILE</button>
+            <button id="viewJobs" class="button" style="width:230px;text-align:center;float:left;">VIEW JOBS</button>
+            <button data-open="signUpModal1" class="button" style="width:230px;text-align:center;float:right;">CREATE PROFILE</button>
           </div>
 
           <p style="font-size:25px;padding-top:10%; color:darkslategray;">
@@ -228,7 +243,7 @@
 
       </div>
 
-      <div id="businessHomepage" style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/purpGrad2.png');">
+      <div id="businessHomepage" style="padding:20px;text-align: center; height: 580px;background-size: cover;background-image: url('./pics/purpGrad2.png');">
 
           <p style="font-size:45px;color:black;text-align:center;">
             Build your start up with less capitol.
@@ -242,10 +257,94 @@
           </p>
 
           <div style="width:480px;margin-top: 10%;margin-left: calc(50% - 240px);">
-            <button class="button" style="width:230px;text-align:center;float:left;">FIND A FREELANCER</button>
-            <button class="button" style="width:230px;text-align:center;float:right;">CREATE BUSINESS PROFILE</button>
+            <button id="findFreelancer" class="button" style="width:230px;text-align:center;float:left;">FIND A FREELANCER</button>
+            <button data-open="signUpModal1" class="button" style="width:230px;text-align:center;float:right;">CREATE BUSINESS PROFILE</button>
           </div>
 
+      </div>
+
+      <div style="height: 250px;background-color:darkslategray;"></div>
+
+
+      <div class="reveal" id="signUpModal1" data-reveal>
+        <h4 style="text-align:center;">Sign up to create a profile!</h4>
+
+        <div class="grid-x grid-margin-x" style="margin-top:35px;">
+          <div class="cell small-1 medium-1"></div>
+          <div class="cell small-5 medium-5">
+            <button class="expanded button" style="text-align:center;">Google</button>
+          </div>
+          <div class="cell small-5 medium-5">
+            <button class="expanded button" style="text-align:center;">Facebook</button>
+          </div>
+          <div class="cell small-1 medium-1"></div>
+        </div>
+
+        <h5 style="text-align:center;">or</h5>
+
+        <form style="margin:35px;">
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-1"></div>
+            <div class="cell small-2">
+              <label for="middle-label" class="text-right middle">Username</label>
+            </div>
+            <div class="cell small-8">
+              <input type="text" id="middle-label" placeholder="Right- and middle-aligned text input">
+            </div>
+            <div class="cell small-1"></div>
+          </div>
+
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-1"></div>
+            <div class="cell small-2">
+              <label for="middle-label" class="text-right middle">Email</label>
+            </div>
+            <div class="cell small-8">
+              <input type="text" id="middle-label" placeholder="Right- and middle-aligned text input">
+            </div>
+            <div class="cell small-1"></div>
+          </div>
+
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-1"></div>
+            <div class="cell small-2">
+              <label for="middle-label" class="text-right middle">Password</label>
+            </div>
+            <div class="cell small-8">
+              <input type="text" id="middle-label" placeholder="Right- and middle-aligned text input">
+            </div>
+            <div class="cell small-1"></div>
+          </div>
+
+          <div class="grid-x grid-margin-x" >
+            <div class="cell small-1"></div>
+            <div class="cell small-3">
+              <button class="expanded button" style="text-align:center;">Sign Up</button>
+            </div>
+            <div class="cell small-7">
+              <p style="font-size:12px;">By clicking "Sign up", you acknowledge that you have read our updated <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a>, and that your continued use of the website is subject to these policies.
+              </p>
+            </div>
+            <div class="cell small-1"></div>
+          </div>
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
 
 

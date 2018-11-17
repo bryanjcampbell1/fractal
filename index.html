@@ -3,7 +3,43 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-    $(document).ready(function(){
+      $(document).ready(function(){
+
+        $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            &&
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
 
         $("#HomeButton").click(function(){
             $(".navMenuItem").hide();
@@ -91,7 +127,6 @@
 
 
     });
-
     </script>
 
     <meta charset="utf-8">
@@ -164,15 +199,15 @@
           <p style="font-size:25px;color:darkslategray;">Find Freelancers. Create a Crypto.</p>
 
           <div style="width:480px;margin-top: 5%;margin-left: calc(50% - 240px);">
-            <button class="button" style="width:230px;text-align:center;float:left;">PERSONAL</button>
-            <button class="button" style="width:230px;text-align:center;float:right;"> BUSINESS</button>
+            <a href="#personalHomepage" class="button" style="width:230px;text-align:center;float:left;">PERSONAL</a>
+            <a href="#businessHomepage" class="button" style="width:230px;text-align:center;float:right;"> BUSINESS</a>
           </div>
 
       </div>
 
       <div style="height: 15px;background-color:#00009aff;"></div>
 
-      <div style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/redGrad2.png');">
+      <div id="personalHomepage" style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/redGrad2.png');">
 
           <p style="font-size:45px;color:black;text-align:center;">
             Get paid for work with private share backed crypto.
@@ -193,7 +228,7 @@
 
       </div>
 
-      <div style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/purpGrad2.png');">
+      <div id="businessHomepage" style="padding:20px;text-align: center; height: 520px;background-size: cover;background-image: url('./pics/purpGrad2.png');">
 
           <p style="font-size:45px;color:black;text-align:center;">
             Build your start up with less capitol.

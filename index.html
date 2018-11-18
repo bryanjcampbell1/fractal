@@ -47,8 +47,8 @@
         });
 
         $("#DashboardButton").click(function(){
-            $(".navMenuItem").hide();
-            $("#DashboardPage").show();
+            $(".navMenuItem").fadeOut();
+            $("#DashboardPage").fadeIn();
         });
 
         $("#ViewProfileButton").click(function(){
@@ -144,6 +144,8 @@
     });
     </script>
 
+
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,6 +154,7 @@
     <link rel="stylesheet" href="css/foundation-icons.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
 </head>
   <body>
 
@@ -381,50 +384,52 @@
 
     <div class="navMenuItem" id="DashboardPage" style="background-size: cover;background-image: url('./pics/purpGrad5.png');">
        <div class="grid-x" >
-         <div class="cell small-3 medium-3" style="height: 900px;padding: 15px;">
+         <div class="cell small-4 medium-4" style="height: 900px;padding: 15px;">
            <div class="grid-x">
-             <div class="cell small-9 medium-9" style="height: 175px;">
-                <div style="margin-top: 20px;height: 110px;width:85px;background-size:cover;background-image: url('./pics/addUser.png');"></div>
-                 <h6 style="text-align:left;margin-top:15px;">kingSnackMan</h6>
-             </div>
-             <div class="cell small-3 medium-3" style="height: 100px;"></div>
-             <div class="cell small-12 medium-12" style="text-align:left;">
-               <hr>
-               <h5>Tokens and Shares</h5>
+               <div class="cell small-9 medium-9" style="height: 175px;">
+                  <div style="margin-top: 20px;height: 110px;width:85px;background-size:cover;background-image: url('./pics/addUser.png');"></div>
+                   <h6 style="text-align:left;margin-top:15px;">kingSnackMan</h6>
+               </div>
+               <div class="cell small-3 medium-3" style="height: 100px;"></div>
+               <div class="cell small-12 medium-12" style="text-align:left;">
+                 <hr>
+                 <h5>Tokens and Shares</h5>
 
-               <table>
-                <thead>
-                  <tr>
-                    <th>Token</th>
-                    <th>Balance</th>
+                 <table>
+                  <thead>
+                    <tr>
+                      <th>Token</th>
+                      <th>Balance</th>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>FRX</td>
-                    <td>0.00</td>
-                  </tr>
-                  <tr>
-                    <td>BEA</td>
-                    <td>1.00</td>
-                  </tr>
-                  <tr>
-                    <td>ETH</td>
-                    <td>6.34</td>
-                  </tr>
-                </tbody>
-              </table>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>FRX</td>
+                      <td>0.00</td>
+                    </tr>
+                    <tr>
+                      <td>BEA</td>
+                      <td>1.00</td>
+                    </tr>
+                    <tr>
+                      <td>ETH</td>
+                      <td>6.34</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
                <button class="expanded button" style="text-align:center;"> Send Tokens </button>
 
                <h5><a href="#">Verify account! Claim FRX tokens!</a></h5>
              </div>
            </div>
          </div>
-         <div class="cell small-9 medium-9" style="height: 900px;">
+         <div class="cell small-8 medium-8" style="height: 900px;">
            <div class="grid-x">
-             <div class="cell small-2 medium-2" style="height: 100px;"></div>
-             <div class="cell small-10 medium-10" style="height: 100px;background-size:cover;background-image: url('./pics/divider3.png');">
+
+             <div class="cell small-12 medium-12" style="height: 100px;background-size:cover;background-image: url('./pics/divider3.png');">
                <div class="grid-x" >
 
 
@@ -465,10 +470,10 @@
              <div class="cell mailMenuItem" style="height: 500px;" id="messagesTable">
                <table>
                 <tbody>
-                  <tr style="height:50px;">
-                    <td style="text-align:left;font-weight: bold;">ChesterChetos</td>
-                    <td style="text-align:left;font-weight: bold;">Workshoping new snack ideas</td>
-                    <td style="text-align:left;">Will you be around wednesday? Looking to run through</td>
+                  <tr style="height:20px;">
+                    <td style="text-align:left;font-weight: bold;height:20px;">ChesterChetos</td>
+                    <td style="text-align:left;font-weight: bold;">Workshoping new </td>
+                    <td style="text-align:left;">Will you be a</td>
                   </tr>
                   <tr style="height:50px;">
                     <td style="text-align:left;font-weight: bold;">ChesterChetos</td>

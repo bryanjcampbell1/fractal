@@ -94,7 +94,38 @@ th {
 }
 tr {
   line-height: 25px;
- border: 1px solid gray;
- margin: 0;
+  border: 1px solid gray;
+  margin: 0;
+  height:40px;
+
+}
+
+td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    text-align:left;
+
+}
+td.columnA {
+    width: 20%;
+    font-weight: bold;
+}
+td.columnB {
+    width: 30%;
+    font-weight: bold;
+}
+td.columnC {
+    width: 50%;
+}
+
+table{
+    table-layout:fixed;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 
 }

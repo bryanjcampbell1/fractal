@@ -141,10 +141,30 @@
         });
 
 
+        $("#companyButton1").click(function(){
+            $("#tokenizeCompanyName").empty();
+            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName1<h5>");
+        });
+        $("#companyButton2").click(function(){
+            $("#tokenizeCompanyName").empty();
+            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName2<h5>");
+        });
+        $("#companyButton3").click(function(){
+            $("#tokenizeCompanyName").empty();
+            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName3<h5>");
+        });
+        $("#companyButton4").click(function(){
+            $("#tokenizeCompanyName").empty();
+            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName4<h5>");
+        });
+        $("#companyButton5").click(function(){
+            $("#tokenizeCompanyName").empty();
+            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName5<h5>");
+        });
+
+
     });
     </script>
-
-
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -167,8 +187,8 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><button type="button" class="button" style="background: none; color:#2579b8;font-weight: bold;">Sign In</button></li>
-          <li><button type="button" class="button">Sign Up</button></li>
+          <li><button data-open="signInModal" type="button" class="button" style="background: none; color:#2579b8;font-weight: bold;">Sign In</button></li>
+          <li><button data-open="signUpModal1" type="button" class="button">Sign Up</button></li>
         </ul>
       </div>
     </div>
@@ -330,59 +350,60 @@
             </div>
             <div class="cell small-1"></div>
           </div>
-
-
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
         <button class="close-button" data-close aria-label="Close reveal" type="button">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
+      <div class="reveal" id="signInModal" data-reveal>
+        <h4 style="text-align:center;">Sign In</h4>
 
+        <button class="button" style="width:300px;text-align:center;margin-top: 15px;margin-left: calc(50% - 150px);">Google</button>
+        <button class="button" style="width:300px;text-align:center;margin-top: 15px;margin-left: calc(50% - 150px);">Facebook</button>
 
-      <!--
-       <div class="grid-x">
-         <div class="cell" style="color:#37a0e6;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 80px;height: 120px;background-size: cover;background-image: url('./pics/diffract.jpg');">
-          <div style="padding:30px;font-style: oblique;">Create.     Build.     Trade.    </div>
-         </div>
-       </div>
-       <div class="grid-x">
-         <div class="cell small-4 medium-4" style="height: 200px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-         <div class="cell small-4 medium-4" style="height: 200px">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-         <div class="cell small-4 medium-4" style="height: 200px">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-       </div>
-       <div class="grid-x grid-margin-x" style="margin-left: 10px;margin-right: 10px; margin-top: 20px; margin-bottom: 10px;">
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/logo2.png');">Logos</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/prototype.png');">Prototyping</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/mockups.png');">Mockups</div>
-       </div>
-       <div class="grid-x grid-margin-x" style="margin-left: 10px;margin-right: 10px;margin-bottom: 10px;">
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/graphicDesign.png');">Graphic Design</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/frontEnd.png');">Front End</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/backend.png');">Back End</div>
-       </div>
-       <div class="grid-x grid-margin-x" style="margin-left: 10px;margin-right: 10px;margin-bottom: 10px;">
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/marketing.png');">Marketing</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/legal.png');">Legal</div>
-         <div class="cell small-4 medium-4" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 50px;height: 200px;background-size: cover;background-image: url('./pics/strategy.png');">Strategy</div>
-       </div>
-     -->
+        <h5 style="text-align:center;">or</h5>
+
+        <form style="margin:35px;">
+
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-1"></div>
+            <div class="cell small-2">
+              <label for="middle-label" class="text-right middle">Email</label>
+            </div>
+            <div class="cell small-7">
+              <input type="text" id="middle-label" placeholder="john.do2@email.net">
+            </div>
+            <div class="cell small-2"></div>
+          </div>
+
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-1"></div>
+            <div class="cell small-2">
+              <label for="middle-label" class="text-right middle">Password</label>
+            </div>
+            <div class="cell small-7">
+              <input type="text" id="middle-label" placeholder="12345">
+            </div>
+            <div class="cell small-2"></div>
+          </div>
+
+          <div class="grid-x grid-margin-x" style="margin-top: 15px;">
+            <div class="cell small-3"></div>
+            <div class="cell small-6">
+              <button class="expanded button" style="text-align:center;">Sign In</button>
+            </div>
+            <div class="cell small-3"></div>
+          </div>
+        </form>
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
     </div>
 
-
-    <div class="navMenuItem" id="DashboardPage" style="background-size: cover;background-image: url('./pics/purpGrad5.png');">
+    <div class="navMenuItem" id="DashboardPage">
        <div class="grid-x" >
          <div class="cell small-4 medium-4" style="height: 900px;padding: 15px;">
            <div class="grid-x">
@@ -429,45 +450,48 @@
          <div class="cell small-8 medium-8" style="height: 900px;">
            <div class="grid-x">
 
-             <div class="cell small-12 medium-12" style="height: 100px;background-size:cover;background-image: url('./pics/divider3.png');">
-               <div class="grid-x" >
+             <div class="cell small-12 medium-12" style="height: 70px;background-size:cover;background-image: url('./pics/divider3.png');">
+               <div class="grid-x">
 
 
-                 <div class="cell auto" style="height: 50px;">
+                 <div class="cell auto" style="height: 70px;">
                    <a href="#0" id=messagesButton style="color:black;">
-                     <i class="fi-mail" style="font-size: 50px;"></i>
-                     <h6>Messages</h6>
+                     <i class="fi-mail" style="font-size: 40px;"></i>
+                     <h6 style="margin-top: -15px;">Messages</h6>
                   </a>
                  </div>
-                 <div class="cell auto" style="height: 100px;">
+
+                 <div class="cell auto" style="height: 70px;">
                    <a href="#0" id=submitButton style="color:black;">
-                     <i class="fi-upload" style="font-size: 50px;"></i>
-                     <h6>Submit</h6>
+                     <i class="fi-upload" style="font-size: 40px;"></i>
+                     <h6 style="margin-top: -15px;">Submit</h6>
                     </a>
                  </div>
-                 <div class="cell auto" style="height: 100px;">
+
+                 <div class="cell auto" style="height: 70px;">
                    <a href="#0" id=reviewButton style="color:black;">
-                     <i class="fi-check" style="font-size: 50px;"></i>
-                     <h6>Review</h6>
+                     <i class="fi-check" style="font-size: 40px;"></i>
+                     <h6 style="margin-top: -15px;">Review</h6>
                   </a>
 
                  </div>
-                 <div class="cell auto" style="height: 100px;">
+                 <div class="cell auto" style="height: 70px;">
                    <a href="#0" id=timelineButton style="color:black;">
-                     <i class="fi-clock" style="font-size: 50px;"></i>
-                     <h6>Deadlines</h6>
+                     <i class="fi-clock" style="font-size: 40px;"></i>
+                     <h6 style="margin-top: -15px;">Deadlines</h6>
                   </a>
                  </div>
-                 <div class="cell auto" style="height: 100px;">
+
+                 <div class="cell auto" style="height: 70px;">
                    <a href="#0" id=alertsButton style="color:black;">
-                     <i class="fi-alert" style="font-size: 50px;"></i>
-                     <h6>Alerts</h6>
+                     <i class="fi-alert" style="font-size: 40px;"></i>
+                     <h6 style="margin-top: -15px;">Alerts</h6>
                    </a>
                  </div>
                </div>
              </div>
 
-             <div class="cell mailMenuItem" style="height: 500px;" id="messagesTable">
+             <div class="cell mailMenuItem" style="height: 500px;margin-top: -5px;" id="messagesTable">
                <table>
                 <tbody>
                   <tr >
@@ -510,6 +534,26 @@
                     <td class="columnB" > </td>
                     <td class="columnC" ></td>
                   </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" > </td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" > </td>
+                    <td class="columnC" ></td>
+                  </tr>
 
                 </tbody>
               </table>
@@ -517,40 +561,67 @@
 
              <div class="cell mailMenuItem" style="height: 500px;" id="submitTable">
                <table>
-                <thead>
-                  <tr>
-                    <th style="text-align:left;">Job</th>
-                    <th style="text-align:left;">Client</th>
-                    <th style="text-align:left;">Description</th>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr>
-                    <td style="text-align:left;font-weight: bold;">Content Goe</td>
-                    <td style="text-align:left;font-weight: bold;">This is tus.</td>
-                    <td>Content Goes</td>
+                    <td class="columnA">Content Goe</td>
+                    <td class="columnB">This is tus.</td>
+                    <td class="columnC">Content Goes</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;font-weight: bold;">Content Goe</td>
-                    <td style="text-align:left;font-weight: bold;">This is tus.</td>
-                    <td>Content Goes</td>
+                    <td class="columnA">Content Goe</td>
+                    <td class="columnB">This is tus.</td>
+                    <td class="columnC">Content Goes</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;font-weight: bold;">Content Goe</td>
-                    <td style="text-align:left;font-weight: bold;">This is tus.</td>
-                    <td>Content Goe</td>
+                    <td class="columnA">Content Goe</td>
+                    <td class="columnB">This is tus.</td>
+                    <td class="columnC">Content Goes</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;font-weight: bold;">Content Goe</td>
-                    <td style="text-align:left;font-weight: bold;">This is tus.</td>
-                    <td>Content Goes</td>
+                    <td class="columnA">Content Goe</td>
+                    <td class="columnB">This is tus.</td>
+                    <td class="columnC">Content Goes</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;font-weight: bold;">Content Goe</td>
-                    <td style="text-align:left;font-weight: bold;">This is tus.</td>
-                    <td>Content Goes</td>
+                    <td class="columnA">Content Goe</td>
+                    <td class="columnB">This is tus.</td>
+                    <td class="columnC">Content Goes</td>
                   </tr>
-
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" > </td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" > </td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" ></td>
+                    <td class="columnC" ></td>
+                  </tr>
+                  <tr >
+                    <td class="columnA"></td>
+                    <td class="columnB" > </td>
+                    <td class="columnC" ></td>
+                  </tr>
                 </tbody>
               </table>
              </div>
@@ -559,10 +630,10 @@
                <table>
                 <thead>
                   <tr>
-                    <th width="200">Job</th>
+                    <th>Job</th>
                     <th>Freelancer</th>
-                    <th width="150">Description</th>
-                    <th width="150">Time Submitted</th>
+                    <th>Description</th>
+                    <th>Time Submitted</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -595,6 +666,42 @@
                     <td>This is tus.</td>
                     <td>Content Goes</td>
                     <td>Content Goe</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
@@ -641,6 +748,26 @@
                     <td>Content Goes</td>
                     <td>Content Goe</td>
                   </tr>
+                  <tr>
+                    <td>Content Goe</td>
+                    <td>Content Goes</td>
+                    <td>Content Goe</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
                 </tbody>
               </table>
              </div>
@@ -669,10 +796,24 @@
                   <tr>
                     <td>Content Goe</td>
                   </tr>
+                  <tr>
+                    <td>Content Goe</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
                 </tbody>
               </table>
              </div>
-
 
            </div>
          </div>
@@ -934,8 +1075,6 @@
 
     </div>
 
-
-
     <div class="navMenuItem" id="PostJobsPage" >
       <div class="grid-x">
         <div class="cell small-3 medium-3" style="padding: 15px;text-align:left;height: 600px;">
@@ -1112,16 +1251,15 @@
       </div>
     </div>
 
-
     <div class="navMenuItem" id="YourCompaniesPage" >
       <div class="grid-y" style="height: 1200px;">
        <div class="cell small-1 medium-1 large-1">
-         <div class="grid-x">
-           <div class="cell auto">Company 1</div>
-           <div class="cell auto">Company 2</div>
-           <div class="cell auto">Company 3</div>
-           <div class="cell auto">Company 4</div>
-           <div class="cell auto">Company 5</div>
+         <div class="grid-x" style="margin-top:10px;">
+           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
+           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
+           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
+           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
+           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
            <div class="cell auto">Add</div>
          </div>
        </div>
@@ -1239,7 +1377,6 @@
 
       </div>
     </div>
-
 
     <div class="navMenuItem" id="CreateCompanyPage" >
       <div class="grid-x">
@@ -1390,15 +1527,31 @@
 
     <div class="navMenuItem" id="TokenizeSharesPage" >
       <div class="grid-x">
-        <div class="cell small-2 medium-2" style="height: 900px;padding: 20px;background:gray;">
+        <div class="cell small-2 medium-2" style="height: 900px;background:gray;">
           <div class="grid-y">
-            <div class="cell small-3 medium-3" style="height: 100px;">Company 1</div>
+            <div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">
+              <a href="#0" id=companyButton1>
+                <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
+              </a>
+            </div>
+            <hr style="margin: 1px;">
+            <div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">
+              <a href="#0" id=companyButton2>
+                <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
+              </a>
+            </div>
             <hr style="margin: 0px;">
-            <div class="cell small-3 medium-3" style="height: 100px;">Company 2</div>
+            <div class="cell small-3 medium-3" style="height: 100px;margin-top:25px;">
+              <a href="#0" id=companyButton3>
+                <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;padding-top:15;">
+              </a>
+            </div>
             <hr style="margin: 0px;">
-            <div class="cell small-3 medium-3" style="height: 100px;">Company 3</div>
-            <hr style="margin: 0px;">
-            <div class="cell small-3 medium-3" style="height: 100px;">Company 4</div>
+            <div class="cell small-3 medium-3" style="height: 100px;margin-top:25px;">
+              <a href="#0" id=companyButton4>
+                <img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;">
+              </a>
+            </div>
             <hr style="margin: 0px;">
           </div>
         </div>
@@ -1409,6 +1562,9 @@
           <div class="grid-x">
             <div class="cell small-5 medium-5" >
               <div class="grid-y">
+                <div class="cell" id="tokenizeCompanyName" style="height: 50px;text-align: center;">
+                  <h5 style="margin-top:15px;text-align:left;">CompanyName1<h5>
+                </div>
                 <div class="cell" style="height: 50px;text-align: center;">
                   <input type="text" placeholder="BTC">
                 </div>
@@ -1427,6 +1583,9 @@
             </div>
             <div class="cell small-5 medium-5" style="height: 160px;">
               <div class="grid-y">
+                <div class="cell" style="height: 50px;text-align: left;margin-left: 12px;">
+
+                </div>
                 <div class="cell" style="height: 50px;text-align: left;margin-left: 12px;">
                   <h5>Desired Ticker</h5>
                 </div>

@@ -1370,13 +1370,17 @@
 
     <div class="navMenuItem" id="PostJobsPage" >
       <div class="grid-x">
-        <div class="cell small-3 medium-3" style="padding: 15px;text-align:left;height: 600px;">
+        <div class="cell small-4 medium-4" style="padding: 15px;text-align:left;height: 600px;">
           <h4>Post Job</h4>
 
+          <label>YourCompany
+            <input type="text" placeholder="" aria-describedby="exampleHelpText">
+          </label>
+          
           <form>
             <label>
               Type Job Description Below
-              <textarea placeholder=""></textarea>
+              <textarea placeholder="" style="height:250px;"></textarea>
             </label>
             <label>Category
               <select>
@@ -1406,52 +1410,170 @@
             <label>Required Skills
               <input type="text" placeholder="" aria-describedby="exampleHelpText">
             </label>
+
             <label>Minimum Rating
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+                <select>
+                  <option>All</option>
+                  <option>5 Stars</option>
+                  <option>4 Stars</option>
+                  <option>3 Stars</option>
+                  <option>2 Stars</option>
+                  <option>1 Stars</option>
+                </select>
             </label>
             <label>Hourly Rate
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+              <div class="grid-x">
+                <div class="cell small-4 medium-4" >
+                  <select>
+                    <option>#</option>
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>10</option>
+                    <option>100</option>
+                    <option>1000</option>
+                    <option>10000</option>
+                  </select>
+                </div>
+                <div class="cell small-8 medium-8" >
+                  <select>
+                    <option>Currency</option>
+                    <option>All</option>
+                    <option>Private Shares</option>
+                    <option>Ether</option>
+                    <option>USD (MKR)</option>
+                  </select>
+                </div>
+              </div>
             </label>
             <label>Country
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+                <select>
+                  <option>All</option>
+                  <option>Afghanistan</option>
+                  <option>Albania</option>
+                  <option>Algeria</option>
+                  <option>Andorra</option>
+                  <option>Angola</option>
+                  <option>Antigua and Barbuda</option>
+                  <option>Argentina</option>
+                  <option>Armenia</option>
+                  <option>Australia</option>
+                  <option>Austria</option>
+                  <option>Azerbaijan</option>
+                </select>
             </label>
             <label>Language
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+              <select>
+                <option>All</option>
+                <option>Afghanistan</option>
+                <option>Albania</option>
+                <option>Algeria</option>
+                <option>Andorra</option>
+                <option>Angola</option>
+                <option>Antigua and Barbuda</option>
+                <option>Argentina</option>
+                <option>Armenia</option>
+                <option>Australia</option>
+                <option>Austria</option>
+                <option>Azerbaijan</option>
+              </select>
             </label>
+
 
             <input type="submit" class="expanded button" value="Post">
 
           </form>
         </div>
-        <div class="cell small-9 medium-9" style="text-align:left;padding: 15px;height: 600px;">
+        <div class="cell small-8 medium-8" style="text-align:left;padding: 15px;height: 600px;">
           <h4>Find a Freelancer</h4>
+          <input type="search" placeholder="Search" aria-describedby="exampleHelpText">
           <table>
             <thead>
               <tr>
-                <th width="200">Table Header</th>
-                <th>Table Header</th>
-                <th width="150">Table Header</th>
-                <th width="150">Table Header</th>
+                <th style="width:180px;">User</th>
+                <th style="width:340px;">Skills</th>
+                <th style="width:80px;">Rate/hr</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
+                <td><div class="reviewer" >
+                  <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                  <p style="font-size:18px;">AlwaysSnack</p>
+                  </div>
+                  <div class="reviewStars" style="margin-top:-10px;">
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
+                  </div>
+                </td>
+                <td>Front End Design, Graphic Design, Legal, Marketing</td>
+                <td style="text-align:center;">250 BAE</td>
               </tr>
               <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
+                <td><div class="reviewer" >
+                  <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                  <p style="font-size:18px;">AlwaysSnack</p>
+                  </div>
+                  <div class="reviewStars" style="margin-top:-10px;">
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
+                  </div>
+                </td>
+                <td>Front End Design, Graphic Design, Legal, Marketing</td>
+                <td style="text-align:center;">250 BAE</td>
               </tr>
               <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
+                <td><div class="reviewer" >
+                  <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                  <p style="font-size:18px;">AlwaysSnack</p>
+                  </div>
+                  <div class="reviewStars" style="margin-top:-10px;">
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
+                  </div>
+                </td>
+                <td>Front End Design, Graphic Design, Legal, Marketing</td>
+                <td style="text-align:center;">250 BAE</td>
+              </tr>
+              <tr>
+                <td><div class="reviewer" >
+                  <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                  <p style="font-size:18px;">AlwaysSnack</p>
+                  </div>
+                  <div class="reviewStars" style="margin-top:-10px;">
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
+                  </div>
+                </td>
+                <td>Front End Design, Graphic Design, Legal, Marketing</td>
+                <td style="text-align:center;">250 BAE</td>
+              </tr>
+              <tr>
+                <td><div class="reviewer" >
+                  <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                  <p style="font-size:18px;">AlwaysSnack</p>
+                  </div>
+                  <div class="reviewStars" style="margin-top:-10px;">
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                    <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
+                  </div>
+                </td>
+                <td>Front End Design, Graphic Design, Legal, Marketing</td>
+                <td style="text-align:center;">250 BAE</td>
               </tr>
             </tbody>
           </table>

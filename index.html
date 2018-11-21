@@ -1197,7 +1197,7 @@
             </label>
             <label>Minimum Rating
                 <select>
-                  <option>All</option>
+                  <option>Any</option>
                   <option>5 Stars</option>
                   <option>4 Stars</option>
                   <option>3 Stars</option>
@@ -1376,7 +1376,7 @@
           <label>YourCompany
             <input type="text" placeholder="" aria-describedby="exampleHelpText">
           </label>
-          
+
           <form>
             <label>
               Type Job Description Below
@@ -1615,17 +1615,98 @@
 
 
             <label>Minimum Employer Rating
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
-            <label>Hourly Rate
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
-            <label>Country
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
-            <label>Language
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
-            </label>
+                  <select>
+                    <option>Any</option>
+                    <option>5 Stars</option>
+                    <option>4 Stars</option>
+                    <option>3 Stars</option>
+                    <option>2 Stars</option>
+                    <option>1 Stars</option>
+                  </select>
+              </label>
+              <label>Hourly Rate
+                <div class="grid-x">
+                  <div class="cell small-4 medium-4" >
+                    <select>
+                      <option>#</option>
+                      <option>Any</option>
+                      <option>1</option>
+                      <option>10</option>
+                      <option>100</option>
+                      <option>1000</option>
+                      <option>10000</option>
+                    </select>
+                  </div>
+                  <div class="cell small-8 medium-8" >
+                    <select>
+                      <option>Currency</option>
+                      <option>All</option>
+                      <option>Private Shares</option>
+                      <option>Ether</option>
+                      <option>USD (MKR)</option>
+                    </select>
+                  </div>
+                </div>
+              </label>
+
+              <label>Total Compensation
+                <div class="grid-x">
+                  <div class="cell small-4 medium-4" >
+                    <select>
+                      <option>#</option>
+                      <option>Any</option>
+                      <option>1</option>
+                      <option>10</option>
+                      <option>100</option>
+                      <option>1000</option>
+                      <option>10000</option>
+                    </select>
+                  </div>
+                  <div class="cell small-8 medium-8" >
+                    <select>
+                      <option>Currency</option>
+                      <option>All</option>
+                      <option>Private Shares</option>
+                      <option>Ether</option>
+                      <option>USD (MKR)</option>
+                    </select>
+                  </div>
+                </div>
+              </label>
+
+
+              <label>Country
+                  <select>
+                    <option>All</option>
+                    <option>Afghanistan</option>
+                    <option>Albania</option>
+                    <option>Algeria</option>
+                    <option>Andorra</option>
+                    <option>Angola</option>
+                    <option>Antigua and Barbuda</option>
+                    <option>Argentina</option>
+                    <option>Armenia</option>
+                    <option>Australia</option>
+                    <option>Austria</option>
+                    <option>Azerbaijan</option>
+                  </select>
+              </label>
+              <label>Language
+                <select>
+                  <option>All</option>
+                  <option>Afghanistan</option>
+                  <option>Albania</option>
+                  <option>Algeria</option>
+                  <option>Andorra</option>
+                  <option>Angola</option>
+                  <option>Antigua and Barbuda</option>
+                  <option>Argentina</option>
+                  <option>Armenia</option>
+                  <option>Australia</option>
+                  <option>Austria</option>
+                  <option>Azerbaijan</option>
+                </select>
+              </label>
 
             <input type="submit" class="expanded button" value="Search">
 
@@ -1826,12 +1907,32 @@
             <h4 style="text-align:left;">Elevator Pitch</h4>
             <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
           </div>
+
+<!-- add upload option for whitepaper and roadmap -->
+
+
+
+
           <div style="padding:1em;">
             <h4 style="text-align:left;">Add Website</h4>
             <label style="text-align:left;">Link Title
               <input type="text" placeholder="Github, Pintrest, Twitter, ect." aria-describedby="exampleHelpText">
             </label>
             <label style="text-align:left;">Link
+              <input type="text" placeholder="www.example.com/me" aria-describedby="exampleHelpText">
+            </label>
+            <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
+          </div>
+          <div style="padding:1em;margin-top:50px;">
+            <h4 style="text-align:left;">Link to Github</h4>
+            <label style="text-align:left;">
+              <input type="text" placeholder="www.example.com/me" aria-describedby="exampleHelpText">
+            </label>
+            <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
+          </div>
+          <div style="padding:1em;margin-top:50px;">
+            <h4 style="text-align:left;">Link to Slack</h4>
+            <label style="text-align:left;">
               <input type="text" placeholder="www.example.com/me" aria-describedby="exampleHelpText">
             </label>
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>

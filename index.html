@@ -499,7 +499,59 @@
                 </table>
 
 
-               <button class="expanded button" style="text-align:center;"> Send Tokens </button>
+               <button data-open="sendTokensModal" class="expanded button" style="text-align:center;"> Send Tokens </button>
+
+               <div class="reveal" id="sendTokensModal" data-reveal>
+                 <h4 style="text-align:center;">SEND TOKENS</h4>
+
+                 <form style="margin:20px;">
+
+                     <div class="grid-x">
+                       <div class="cell small-1"></div>
+                       <div class="cell small-7 medium-7" style="margin-top:4px;">
+                         <input type="text" placeholder="Amount" aria-describedby="exampleHelpText">
+                       </div>
+                       <div class="cell small-3 medium-3" >
+                         <select>
+                           <option>Type</option>
+                           <option>BEA</option>
+                           <option>FRX</option>
+                           <option>ETH</option>
+                           <option>USD (MKR)</option>
+                         </select>
+                       </div>
+                       <div class="cell small-1"></div>
+                     </div>
+
+                     <h5 style="text-align:center;"> TO </h5>
+
+
+
+                     <div class="grid-x">
+                       <div class="cell small-1"></div>
+                       <div class="cell small-10 medium-10">
+                         <input type="text" placeholder="Username or Ethereum Address" aria-describedby="exampleHelpText">
+                       </div>
+                       <div class="cell small-1"></div>
+                     </div>
+
+                     <div class="grid-x">
+                       <div class="cell small-3"></div>
+                       <div class="cell small-6 medium-6" style="margin-top:5px;">
+                         <button class="button expanded" style="text-align:center;"> Send </button>
+                       </div>
+                       <div class="cell small-3"></div>
+                     </div>
+
+
+
+
+                 </form>
+                 <button class="close-button" data-close aria-label="Close reveal" type="button">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+
 
                <h5 style="text-align:center;"><a href="#">Verify account! Claim FRX tokens!</a></h5>
              </div>
@@ -970,7 +1022,7 @@
               </div>
               <div class="reviewDescription">
                 <p style="font-size:15px;">Awesome but not for the faint hearted.
-Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
+                  Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
                 </p>
               </div>
             </div>
@@ -990,7 +1042,7 @@ Unless you start with a strong math background to the level of tensors, you shou
               </div>
               <div class="reviewDescription">
                 <p style="font-size:15px;">Awesome but not for the faint hearted.
-Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
+                  Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
                 </p>
               </div>
             </div>
@@ -1312,6 +1364,7 @@ Unless you start with a strong math background to the level of tensors, you shou
 
         </div>
       </div>
+
 
     </div>
 

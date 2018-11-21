@@ -162,6 +162,64 @@
             $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName5<h5>");
         });
 
+      /*-----------------------------*/
+
+      $("#companiesTopBarButton1").click(function(){
+        $("#companyHeaderAndLogo").empty();
+        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:yellow;">'+
+          '<div style="padding-top: 20px;">'+
+            '<img src="./pics/logo1.png" alt="Avatar" style="height:150px; width: 150px;">'+
+         '</div>'+
+        '</div>');
+        $("#headerAndPitch").empty();
+        $("#headerAndPitch").append('<h3>Header 1</h3>'+
+        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
+        '</div>');
+      });
+
+
+      $("#companiesTopBarButton2").click(function(){
+        $("#companyHeaderAndLogo").empty();
+        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:purple;">'+
+          '<div style="padding-top: 20px;">'+
+            '<img src="./pics/logo2.png" alt="Avatar" style="height:150px; width: 150px;">'+
+         '</div>'+
+        '</div>');
+        $("#headerAndPitch").empty();
+        $("#headerAndPitch").append('<h3>Header 2</h3>'+
+        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
+        '</div>');
+      });
+      $("#companiesTopBarButton3").click(function(){
+        $("#companyHeaderAndLogo").empty();
+        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:blue;">'+
+          '<div style="padding-top: 20px;">'+
+            '<img src="./pics/job1.png" alt="Avatar" style="height:150px; width: 150px;">'+
+         '</div>'+
+        '</div>');
+        $("#headerAndPitch").empty();
+        $("#headerAndPitch").append('<h3>Header 3</h3>'+
+        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
+        '</div>');
+      });
+      $("#companiesTopBarButton4").click(function(){
+        $("#companyHeaderAndLogo").empty();
+        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:orange;">'+
+          '<div style="padding-top: 20px;">'+
+            '<img src="./pics/job3.png" alt="Avatar" style="height:150px; width: 150px;">'+
+         '</div>'+
+        '</div>');
+        $("#headerAndPitch").empty();
+        $("#headerAndPitch").append('<h3>Header 4</h3>'+
+        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
+        '</div>');
+      });
+      $("#addCompanyButton").click(function(){
+        $(".navMenuItem").fadeOut();
+        $("#CreateCompanyPage").fadeIn();
+      });
+
+
 
     });
     </script>
@@ -1255,18 +1313,39 @@
       <div class="grid-y" style="height: 1200px;">
        <div class="cell small-1 medium-1 large-1">
          <div class="grid-x" style="margin-top:10px;">
-           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
-           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
-           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
-           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
-           <div class="cell auto"><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></div>
-           <div class="cell auto">Add</div>
+           <div class="cell auto">
+             <a href="#0" id=companiesTopBarButton1>
+               <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
+             </a>
+          </div>
+          <div class="cell auto">
+            <a href="#0" id=companiesTopBarButton2>
+              <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;">
+            </a>
+         </div>
+           <div class="cell auto">
+             <a href="#0" id=companiesTopBarButton3>
+               <img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;">
+             </a>
+          </div>
+          <div class="cell auto">
+            <a href="#0" id=companiesTopBarButton4>
+              <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
+            </a>
+         </div>
+         <div class="cell auto" style="margin-top:10px;">
+           <a href="#0" id=addCompanyButton>
+             <i class="fi-plus" style="font-size: 40px;height:75px; width: 75px;"></i>
+           </a>
+        </div>
+
          </div>
        </div>
-       <div class="cell small-2 medium-2 large-2" style="background-size: cover;background-image: url('./pics/diffract.jpg');">
-         <div style="margin-top: 20px;margin-left: 20px;">
-           <img src="./pics/logo2.png" alt="Avatar" style="height:150px; width: 150px;">
-
+       <div class="cell small-2 medium-2 large-2" id="companyHeaderAndLogo" >
+         <div style="height:180px;background-size: cover;background-image: url('./pics/diffract.jpg');">
+           <div style="padding-top: 20px;">
+             <img src="./pics/logo2.png" alt="Avatar" style="height:150px; width: 150px;">
+          </div>
          </div>
        </div>
 
@@ -1274,7 +1353,7 @@
 
        <div class="cell small-3 medium-3 large-3">
          <div class="grid-x">
-           <div class="cell small-6 medium- large-6">
+           <div class="cell small-6 medium- large-6" id="headerAndPitch">
              <h3>Header</h3>
              <div style="text-align: left; margin-left:20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
            </div>
@@ -1293,23 +1372,23 @@
          <div class="grid-x">
 
            <div class="cell auto">
-             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;margin-top: 20px;">
+             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
              <h5>Ben - Advisor</h5>
            </div>
            <div class="cell auto">
-             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;margin-top: 20px;">
+             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
              <h5>Jimmy - CTO</h5>
            </div>
            <div class="cell auto">
-             <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:200px; width: 200px;">
+             <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;">
              <h5>George - CEO</h5>
            </div>
            <div class="cell auto">
-             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;margin-top: 20px;">
+             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
              <h5>Mikey - Design</h5>
            </div>
            <div class="cell auto">
-             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;margin-top: 20px;">
+             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
              <h5>T.Guns - Strategy</h5>
            </div>
          </div>
@@ -1390,7 +1469,7 @@
             <h4 style="text-align:left;">Elevator Pitch</h4>
             <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
           </div>
-          <div>
+          <div style="padding:1em;">
             <h4 style="text-align:left;">Add Website</h4>
             <label style="text-align:left;">Link Title
               <input type="text" placeholder="Github, Pintrest, Twitter, ect." aria-describedby="exampleHelpText">
@@ -1479,10 +1558,30 @@
               </select>
             </label>
             <label>Minimum Rating
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+                <select>
+                  <option>All</option>
+                  <option>5 Stars</option>
+                  <option>4 Stars</option>
+                  <option>3 Stars</option>
+                  <option>2 Stars</option>
+                  <option>1 Stars</option>
+                </select>
             </label>
             <label>Country
-              <input type="text" placeholder="" aria-describedby="exampleHelpText">
+                <select>
+                  <option>All</option>
+                  <option>Afghanistan</option>
+                  <option>Albania</option>
+                  <option>Algeria</option>
+                  <option>Andorra</option>
+                  <option>Angola</option>
+                  <option>Antigua and Barbuda</option>
+                  <option>Argentina</option>
+                  <option>Armenia</option>
+                  <option>Australia</option>
+                  <option>Austria</option>
+                  <option>Azerbaijan</option>
+                </select>
             </label>
 
             <input type="submit" class="expanded button" value="Search">
@@ -1643,7 +1742,7 @@
               <div class="grid-x">
                 <div class="cell small-1 medium-1">
                   <button type="button">
-                    <i class="fi-plus" style="height:40px;"></i>
+                    <i class="fi-plus" style="height:60px;"></i>
                   </button>
                 </div>
                 <div class="cell auto"></div>

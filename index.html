@@ -933,14 +933,14 @@
     <div class="navMenuItem" id="ViewProfilePage" >
 
       <div class="grid-x" style="height: 250px;background-size: cover;background-image: url('./pics/desert.jpg');">
-        <div class="cell small-2 medium-2">
+        <div class="cell small-3 medium-3">
           <button type="button" class="success button" style="width:200px;margin-left:2em;margin-top:2em;">Contact</button>
         </div>
-        <div class="cell small-8 medium-8">
+        <div class="cell small-6 medium-6">
           <img src="./pics/bigHead.png" alt="Avatar" style="border-radius: 50%;height:170px; width: 170px;margin-top:12px;">
           <h5>kingSnackMan</h5>
         </div>
-        <div class="cell small-2 medium-2">
+        <div class="cell small-3 medium-3">
           <div style="margin-right:2em;margin-top:1em;">
             <div class="grid-x">
               <div class="cell auto">
@@ -960,6 +960,12 @@
               </div>
             </div>
           </div>
+
+          <div id="CompensationRate">
+            <h6>50 USD/hr or Equivalent</h6>
+            <h6>Accepts Private Shares</h6>
+          </div>
+
         </div>
       </div>
       <div class="grid-x" style="height: 50px;background-color: lightblue;">
@@ -1097,18 +1103,41 @@
             <h4 style="text-align:left;">Bio</h4>
             <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
           </div>
-        <div style="padding:1em;height:200px;">
-          <h4 style="text-align:left;">Skills</h4>
-          <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
-          <div>
-            <div class="callout warning label"  style="padding: 1em;width:120px;height:50px;text-align:left;float:left;" data-closable>
-              <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h6>Snacking</h6>
+          <div style="padding:1em;height:200px;">
+            <h4 style="text-align:left;">Skills</h4>
+            <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
+            <div>
+              <div class="callout warning label"  style="padding: 1em;width:120px;height:50px;text-align:left;float:left;" data-closable>
+                <button class="close-button" aria-label="Close alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h6>Snacking</h6>
+              </div>
             </div>
           </div>
-        </div>
+          <div id="editCompensation" style="padding:1em;">
+            <h4 style="text-align:left;">Requested Hourly Compensation</h4>
+              <div class="grid-x">
+                <div class="cell small-2 medium-2" >
+                  <input type="text" placeholder="50" style="margin-top:4px;" aria-describedby="exampleHelpText">
+                </div>
+                <div class="cell small-2 medium-2" >
+                  <select>
+                    <option>Currency</option>
+                    <option>All</option>
+                    <option>Private Shares</option>
+                    <option>Ether</option>
+                    <option>USD (MKR)</option>
+                  </select>
+                </div>
+                <div class="cell small-8 medium-8">
+                  <input id="formCheckbox1" type="checkbox" stlye="margin-left:10px;"><label for="formCheckbox1">Accept Alternate Currency of Equivalent Value</label>
+                  <input id="formCheckbox2" type="checkbox"><label for="formCheckbox1">Accept Private Shares</label>
+                </div>
+              </div>
+            </div>
+
+
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
             <label style="text-align:left;">Company or Project Name
@@ -1718,24 +1747,60 @@
           <table>
             <thead>
               <tr>
-                <th width="200">Company</th>
-                <th>Job Description</th>
-                <th width="150">Compensation</th>
+                <th style="width:25%">Company</th>
+                <th style="width:55%">Job Description</th>
+                <th style="width:20%">Compensation</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>
+                  <div class="reviewer" >
+                    <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
+                    <p style="font-size:18px;">Universal</p>
+                    </div>
+                    <div class="reviewStars" style="margin-top:-10px;">
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
+                    </div>
+                </td>
                 <td>Web designer needed for landing page.  Exciting personal cloud project!</td>
                 <td style="text-align:center;">250 BAE</td>
               </tr>
               <tr>
-                <td><img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>
+                  <div class="reviewer" >
+                    <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
+                    <p style="font-size:18px;">Universal</p>
+                    </div>
+                    <div class="reviewStars" style="margin-top:-10px;">
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
+                    </div>
+                </td>
                 <td>Logo design for online store. </td>
                 <td style="text-align:center;">350 BAE</td>
               </tr>
               <tr>
-                <td><img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;"></td>
+                <td>
+                  <div class="reviewer" >
+                    <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
+                    <p style="font-size:18px;">Universal</p>
+                    </div>
+                    <div class="reviewStars" style="margin-top:-10px;">
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
+                    </div>
+                </td>
                 <td>Backend for mobile app. Peer to peer lending service for new ghome buyers.</td>
                 <td style="text-align:center;">220 BAE</td>
               </tr>

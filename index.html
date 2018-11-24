@@ -5,6 +5,21 @@
     <script>
       $(document).ready(function(){
 
+        var message1 = ["ChesterChetos1", "Workshoping new flavors1", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message2 = ["ChesterChetos2", "Workshoping new flavors2", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message3 = ["ChesterChetos3", "Workshoping new flavors3", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message4 = ["ChesterChetos4", "Workshoping new flavors4", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message5 = ["ChesterChetos5", "Workshoping new flavors5", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message6 = ["ChesterChetos6", "Workshoping new flavors6", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message7 = ["", "", ""];
+        var message8 = ["", "", ""];
+        var message9 = ["", "", ""];
+        var message10 = ["", "", ""];
+        var message11 = ["", "", ""];
+        var message12 = ["", "", ""];
+
+        var messages = [message1,message2,message3,message4,message5,message6,message7,message8,message9,message10,message11,message12];
+
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
         .not('[href="#"]')
@@ -48,6 +63,21 @@
 
         $("#DashboardButton").click(function(){
             $(".navMenuItem").fadeOut();
+            $("#messagesTableBody").empty();
+            var cells;
+
+            for (i = 0; i < messages.length; i++) {
+                var singleMessage = messages[i];
+
+
+                cells += "<tr>"+
+                          "<td class='columnA'>"+ singleMessage[0] + "</td>" +
+                          "<td class='columnA'>"+ singleMessage[1] + "</td>" +
+                          "<td class='columnA'>"+ singleMessage[2] + "</td>" +
+                        "</tr>";
+            }
+
+            $("#messagesTableBody").append(cells);
             $("#DashboardPage").fadeIn();
         });
 
@@ -117,6 +147,21 @@
         /*--------------------*/
         $("#messagesButton").click(function(){
             $(".mailMenuItem").hide();
+            $("#messagesTableBody").empty();
+            var cells;
+
+            for (i = 0; i < messages.length; i++) {
+                var singleMessage = messages[i];
+
+
+                cells += "<tr>"+
+                          "<td class='columnA'>"+ singleMessage[0] + "</td>" +
+                          "<td class='columnA'>"+ singleMessage[1] + "</td>" +
+                          "<td class='columnA'>"+ singleMessage[2] + "</td>" +
+                        "</tr>";
+            }
+
+            $("#messagesTableBody").append(cells);
             $("#messagesTable").show();
         });
 
@@ -603,67 +648,7 @@
 
              <div class="cell mailMenuItem" style="height: 500px;margin-top: -5px;" id="messagesTable">
                <table>
-                <tbody>
-                  <tr >
-                    <td class="columnA">ChesterChetos</td>
-                    <td class="columnB" >Workshoping new flavors</td>
-                    <td class="columnC" >Will you be around wednesday night for taste tests?  Requiring 10 more varieties.</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA">ChesterChetos</td>
-                    <td class="columnB" >Workshoping new flavors</td>
-                    <td class="columnC" >Will you be around wednesday night for taste tests?  Requiring 10 more varieties.</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA">ChesterChetos</td>
-                    <td class="columnB" >Workshoping new combos</td>
-                    <td class="columnC" >Will you be around wednesday night for taste tests?  Requiring 10 more varieties.</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA">ChesterChetos</td>
-                    <td class="columnB" >Workshoping new spices</td>
-                    <td class="columnC" >Will you be around wednesday night for taste tests.  Requiring 10 more varieties.</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA">ChesterChetos</td>
-                    <td class="columnB" >Workshoping new wrappers</td>
-                    <td class="columnC" >Will you be around wednesday night for taste tests.  Requiring 10 more varieties.</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
+                <tbody id="messagesTableBody">
 
                 </tbody>
               </table>
@@ -1974,7 +1959,6 @@
             <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
           </div>
 
-<!-- add upload option for whitepaper and roadmap -->
           <div style="padding:1em;text-align:left;height:300px;">
             <h4>Upload Whitepaper</h4>
             <i class="fi-page-pdf" style="font-size:100px;"></i>

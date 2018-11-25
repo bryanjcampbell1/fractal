@@ -37,6 +37,37 @@
 
         var submissions = [submission1,submission2,submission3,submission4,submission5,submission6,submission7,submission8,submission9,submission10,submission11,submission12];
 
+
+        var reviewTable1 = ["Mobile Design","PopcornDude24","Need mockup for mobile version of web app", "10/15/18  9:25" ];
+        var reviewTable2 = ["Mobile Design","PopcornDude25","Need mockup for mobile version of web app", "10/15/18  9:27" ];
+        var reviewTable3 = ["Mobile Design","PopcornDude26","Need mockup for mobile version of web app", "10/15/18  9:28" ];
+        var reviewTable4 = ["Mobile Design","PopcornDude27","Need mockup for mobile version of web app", "10/15/18  9:29" ];
+        var reviewTable5 = ["Mobile Design","PopcornDude28","Need mockup for mobile version of web app", "10/15/18  9:30" ];
+        var reviewTable6 = ["Mobile Design","PopcornDude29","Need mockup for mobile version of web app", "10/15/18  9:35" ];
+        var reviewTable7 =  ["", "", "", ""];
+        var reviewTable8 =  ["", "", "", ""];
+        var reviewTable9 =  ["", "", "", ""];
+        var reviewTable10 =  ["", "", "", ""];
+        var reviewTable11 =  ["", "", "", ""];
+        var reviewTable12 =  ["", "", "", ""];
+
+        var reviewTableCells = [reviewTable1,reviewTable2,reviewTable3,reviewTable4,reviewTable5,reviewTable6,reviewTable7,reviewTable8,reviewTable9,reviewTable10,reviewTable11,reviewTable12];
+
+        var deadline1 = ["Mobile Design1","PopcornDude24", "10/15/18  9:25" ];
+        var deadline2 = ["Mobile Design2","PopcornDude25", "10/15/18  9:27" ];
+        var deadline3 = ["Mobile Design3","PopcornDude26", "10/15/18  9:28" ];
+        var deadline4 = ["Mobile Design4","PopcornDude27", "10/15/18  9:29" ];
+        var deadline5 = ["Mobile Design5","PopcornDude28", "10/15/18  9:30" ];
+        var deadline6 = ["Mobile Design6","PopcornDude29", "10/15/18  9:35" ];
+        var deadline7 = ["", "", ""];
+        var deadline8 = ["", "", ""];
+        var deadline9 = ["", "", ""];
+        var deadline10 = ["", "", ""];
+        var deadline11 = ["", "", ""];
+        var deadline12 = ["", "", ""];
+
+        var deadlines = [deadline1,deadline2,deadline3,deadline4,deadline5,deadline6,deadline7,deadline8,deadline9,deadline10,deadline11,deadline12];
+
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
         .not('[href="#"]')
@@ -204,11 +235,43 @@
 
         $("#reviewButton").click(function(){
           $(".mailMenuItem").hide();
+          $("#reviewTableBody").empty();
+          var cells;
+
+          for (i = 0; i < reviewTableCells.length; i++) {
+              var singleReview = reviewTableCells[i];
+
+
+              cells += "<tr>"+
+                        "<td >"+ singleReview[0] + "</td>" +
+                        "<td >"+ singleReview[1] + "</td>" +
+                        "<td >"+ singleReview[2] + "</td>" +
+                        "<td style='text-align:right;'>"+ singleReview[3] + "</td>" +
+                      "</tr>";
+          }
+
+          $("#reviewTableBody").append(cells);
+
           $("#reviewTable").show();
         });
 
         $("#timelineButton").click(function(){
           $(".mailMenuItem").hide();
+          $("#timeTableBody").empty();
+          var cells;
+
+          for (i = 0; i < deadlines.length; i++) {
+              var singleDeadline = deadlines[i];
+
+
+              cells += "<tr>"+
+                        "<td class='columnA'>"+ singleDeadline[0] + "</td>" +
+                        "<td class='columnB' style='font-weight:normal;'>"+ singleDeadline[1] + "</td>" +
+                        "<td class='columnC'>"+ singleDeadline[2] + "</td>" +
+                      "</tr>";
+          }
+
+          $("#timeTableBody").append(cells);
           $("#timelineTable").show();
         });
 
@@ -760,10 +823,10 @@
                     <th>Job</th>
                     <th>Freelancer</th>
                     <th>Description</th>
-                    <th>Time Submitted</th>
+                    <th style='text-align:right;'>Time Submitted</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="reviewTableBody">
                   <tr>
                     <td>Content Goe</td>
                     <td>This is tus.</td>
@@ -843,7 +906,7 @@
                     <th width="150">Deadline</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="timeTableBody">
                   <tr>
                     <td>Content Goe</td>
                     <td>This is tus.</td>

@@ -5,6 +5,8 @@
     <script>
       $(document).ready(function(){
 
+        /*------------------------------- Dashboard Mock Data ---------------------------------------- */
+
         var message1 = ["ChesterChetos1", "Workshoping new flavors1", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var message2 = ["ChesterChetos2", "Workshoping new flavors2", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var message3 = ["ChesterChetos3", "Workshoping new flavors3", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
@@ -89,6 +91,13 @@
 
         var coins = [coin1,coin2,coin3];
 
+        var profilePic ="./pics/bigHead.png";
+        //var profilePic ="";
+
+        var userName = "kingSnackMan3";
+
+        /*-------------------------------------------------------------------------------- */
+
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
         .not('[href="#"]')
@@ -132,6 +141,20 @@
 
         $("#DashboardButton").click(function(){
             $(".navMenuItem").fadeOut();
+
+            $("#nameAndPic").empty();
+
+            var pic;
+            if (profilePic ==""){
+              var pic = './pics/addUser.png';
+            }
+            else{
+              var pic = profilePic;
+            }
+
+            var nameAndPicContent = '<div style="margin-top: 20px;height: 110px;background-repeat: no-repeat;background-size: contain;background-image: url(' + pic + ');"></div>' +
+                                    '<h6 style="text-align:left;margin-top:15px;">'+userName+'</h6>';
+
             $("#messagesTableBody").empty();
             $("#tokensTableBody").empty();
             var cells;
@@ -157,6 +180,7 @@
                           "<td class='columnC'>"+ singleMessage[2] + "</td>" +
                         "</tr>";
             }
+            $("#nameAndPic").append(nameAndPicContent);
             $("#tokensTableBody").append(balances);
             $("#messagesTableBody").append(cells);
             $("#DashboardPage").fadeIn();
@@ -651,9 +675,8 @@
        <div class="grid-x" >
          <div class="cell small-4 medium-4" style="height: 900px;padding: 15px;">
            <div class="grid-x">
-               <div class="cell small-9 medium-9" style="height: 175px;">
-                  <div style="margin-top: 20px;height: 110px;width:85px;background-size:cover;background-image: url('./pics/addUser.png');"></div>
-                   <h6 style="text-align:left;margin-top:15px;">kingSnackMan</h6>
+               <div class="cell small-9 medium-9" style="height: 175px;"  id="nameAndPic">
+
                </div>
                <div class="cell small-3 medium-3" style="height: 100px;"></div>
                <div class="cell small-12 medium-12" style="text-align:left;">
@@ -665,7 +688,6 @@
                     <tr>
                       <th>Token</th>
                       <th>Balance</th>
-
                     </tr>
                   </thead>
                   <tbody id="tokensTableBody">

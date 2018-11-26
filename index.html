@@ -83,6 +83,12 @@
 
         var alerts = [alert1,alert2,alert3,alert4,alert5,alert6,alert7,alert8,alert9,alert10,alert11,alert12];
 
+        var coin1 = ["FRX","0.00"];
+        var coin2 = ["BEA","1.00"];
+        var coin3 = ["ETH","6.44"];
+
+        var coins = [coin1,coin2,coin3];
+
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
         .not('[href="#"]')
@@ -127,7 +133,19 @@
         $("#DashboardButton").click(function(){
             $(".navMenuItem").fadeOut();
             $("#messagesTableBody").empty();
+            $("#tokensTableBody").empty();
             var cells;
+            var balances;
+
+            for (i = 0; i < coins.length; i++) {
+                var singleCoin = coins[i];
+
+
+                balances += "<tr>"+
+                          "<td>"+ singleCoin[0] + "</td>" +
+                          "<td>"+ singleCoin[1] + "</td>" +
+                        "</tr>";
+            }
 
             for (i = 0; i < messages.length; i++) {
                 var singleMessage = messages[i];
@@ -139,7 +157,7 @@
                           "<td class='columnC'>"+ singleMessage[2] + "</td>" +
                         "</tr>";
             }
-
+            $("#tokensTableBody").append(balances);
             $("#messagesTableBody").append(cells);
             $("#DashboardPage").fadeIn();
         });
@@ -650,19 +668,8 @@
 
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>FRX</td>
-                      <td>0.00</td>
-                    </tr>
-                    <tr>
-                      <td>BEA</td>
-                      <td>1.00</td>
-                    </tr>
-                    <tr>
-                      <td>ETH</td>
-                      <td>6.34</td>
-                    </tr>
+                  <tbody id="tokensTableBody">
+
                   </tbody>
                 </table>
 
@@ -825,7 +832,7 @@
                   </tr>
                 </thead>
                 <tbody id="alertTableBody">
-                  
+
                 </tbody>
               </table>
              </div>

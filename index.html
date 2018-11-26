@@ -53,12 +53,12 @@
 
         var reviewTableCells = [reviewTable1,reviewTable2,reviewTable3,reviewTable4,reviewTable5,reviewTable6,reviewTable7,reviewTable8,reviewTable9,reviewTable10,reviewTable11,reviewTable12];
 
-        var deadline1 = ["Mobile Design1","PopcornDude24", "10/15/18  9:25" ];
-        var deadline2 = ["Mobile Design2","PopcornDude25", "10/15/18  9:27" ];
-        var deadline3 = ["Mobile Design3","PopcornDude26", "10/15/18  9:28" ];
-        var deadline4 = ["Mobile Design4","PopcornDude27", "10/15/18  9:29" ];
-        var deadline5 = ["Mobile Design5","PopcornDude28", "10/15/18  9:30" ];
-        var deadline6 = ["Mobile Design6","PopcornDude29", "10/15/18  9:35" ];
+        var deadline1 = ["PopcornDude24", "Mobile Design1", "10/15/18  9:25" ];
+        var deadline2 = ["PopcornDude25","Mobile Design2", "10/15/18  9:27" ];
+        var deadline3 = ["PopcornDude26","Web Design1", "10/15/18  9:28" ];
+        var deadline4 = ["PopcornDude27","Mockup", "10/15/18  9:29" ];
+        var deadline5 = ["PopcornDude28","Code Audit", "10/15/18  9:30" ];
+        var deadline6 = ["PopcornDude29","Backend Dev", "10/15/18  9:35" ];
         var deadline7 = ["", "", ""];
         var deadline8 = ["", "", ""];
         var deadline9 = ["", "", ""];
@@ -67,6 +67,21 @@
         var deadline12 = ["", "", ""];
 
         var deadlines = [deadline1,deadline2,deadline3,deadline4,deadline5,deadline6,deadline7,deadline8,deadline9,deadline10,deadline11,deadline12];
+
+        var alert1 = ["Verify account to recieve FRX tokens"];
+        var alert2 = ["Check out these other graphic designers 'PretzlGuy15' and 'SnacksSnacksSnacks'"];
+        var alert3 = ["You logged in with a new device at 3:12 9/24/18" ];
+        var alert4 = ["Upload proof-of-coperatization to tokenize shares of 'UniveralCompany'" ];
+        var alert5 = [""]
+        var alert6 = [""]
+        var alert7 = [""];
+        var alert8 = [""];
+        var alert9 = [""];
+        var alert10 = [""];
+        var alert11 = [""];
+        var alert12 = [""];
+
+        var alerts = [alert1,alert2,alert3,alert4,alert5,alert6,alert7,alert8,alert9,alert10,alert11,alert12];
 
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
@@ -277,6 +292,19 @@
 
         $("#alertsButton").click(function(){
           $(".mailMenuItem").hide();
+          $("#alertTableBody").empty();
+          var cells;
+
+          for (i = 0; i < alerts.length; i++) {
+              var singleAlert = alerts[i];
+
+
+              cells += "<tr>"+
+                        "<td>"+ singleAlert[0] + "</td>" +
+                      "</tr>";
+          }
+
+          $("#alertTableBody").append(cells);
           $("#alertsTable").show();
         });
 
@@ -752,66 +780,7 @@
              <div class="cell mailMenuItem" style="height: 500px;" id="submitTable">
                <table>
                 <tbody id="submitTableBody">
-                  <tr>
-                    <td class="columnA">Content Goe</td>
-                    <td class="columnB">This is tus.</td>
-                    <td class="columnC">Content Goes</td>
-                  </tr>
-                  <tr>
-                    <td class="columnA">Content Goe</td>
-                    <td class="columnB">This is tus.</td>
-                    <td class="columnC">Content Goes</td>
-                  </tr>
-                  <tr>
-                    <td class="columnA">Content Goe</td>
-                    <td class="columnB">This is tus.</td>
-                    <td class="columnC">Content Goes</td>
-                  </tr>
-                  <tr>
-                    <td class="columnA">Content Goe</td>
-                    <td class="columnB">This is tus.</td>
-                    <td class="columnC">Content Goes</td>
-                  </tr>
-                  <tr>
-                    <td class="columnA">Content Goe</td>
-                    <td class="columnB">This is tus.</td>
-                    <td class="columnC">Content Goes</td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" ></td>
-                    <td class="columnC" ></td>
-                  </tr>
-                  <tr >
-                    <td class="columnA"></td>
-                    <td class="columnB" > </td>
-                    <td class="columnC" ></td>
-                  </tr>
+
                 </tbody>
               </table>
              </div>
@@ -827,72 +796,7 @@
                   </tr>
                 </thead>
                 <tbody id="reviewTableBody">
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+
                 </tbody>
               </table>
              </div>
@@ -907,57 +811,7 @@
                   </tr>
                 </thead>
                 <tbody id="timeTableBody">
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>This is tus.</td>
-                    <td>Content Goes</td>
 
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                    <td>Content Goes</td>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
                 </tbody>
               </table>
              </div>
@@ -970,37 +824,8 @@
 
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goe</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
+                <tbody id="alertTableBody">
+                  
                 </tbody>
               </table>
              </div>

@@ -96,6 +96,25 @@
 
         var userName = "kingSnackMan3";
 
+        /*-------------------------------View Profile Data----------------------------------- */
+
+        var reviewAverage = 4;
+        var skills = ["Data Analytics","Marketing","AWS","Snacking"];
+        var userBio = ["Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned."];
+
+        var userProject1 = ["FritoLay","https://www.fritolay.com","Web Design"];
+        var userProject2 = ["Takis","https://www.taquitos.net/chips/Takis-Huakamoles","Marketing"];
+        var userProject3 = ["CornChip","http://cornchip.com","CEO"];
+        var userProject4 = ["UTZ","https://www.utzsnacks.com","Quality Control"];
+        var userProjects = [userProject1,userProject2,userProject3,userProject4];
+
+        var userReview1 = ["./pics/daft.png","NeverSnack",3,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
+        var userReview2 = ["./pics/khomeni.png","AlwaysSnack",4,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
+        var userReview3 = ["./pics/manson.png","NeverCrunch",5,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
+        var userReview4 = ["./pics/daft.png","SometimesSnack",1,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
+        var userReview5 = ["./pics/bigHead.png","AlwaysCrunch",5,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
+
+        var userReviews = [userReview1,userReview2,userReview3,userReview4,userReview5];
         /*-------------------------------------------------------------------------------- */
 
         $('a[href*="#"]')
@@ -153,7 +172,7 @@
             }
 
             var nameAndPicContent = '<div style="margin-top: 20px;height: 110px;background-repeat: no-repeat;background-size: contain;background-image: url(' + pic + ');"></div>' +
-                                    '<h6 style="text-align:left;margin-top:15px;">'+userName+'</h6>';
+                                    '<h5 style="text-align:left;margin-top:15px;">'+userName+'</h5>';
 
             $("#messagesTableBody").empty();
             $("#tokensTableBody").empty();
@@ -188,6 +207,113 @@
 
         $("#ViewProfileButton").click(function(){
           $(".navMenuItem").hide();
+          $("#reviewBox").empty();
+
+
+
+          var cells1;
+
+          for (i = 0; i < userReviews.length; i++) {
+              var singleReview = userReviews[i];
+
+
+              cells1 += '<div class="review">'+
+                          '<div class="reviewer" >'+
+                            '<img src=' + singleReview[0]+' alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">'+
+                            '<p style="font-size:18px;">'+ singleReview[1] +'</p>'+
+                        "</div>";
+
+              if(singleReview[2] == 1){
+                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+
+              }
+              else if(singleReview[2] == 2){
+                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+
+              }
+              else if(singleReview[2] == 3){
+                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+
+              }
+              else if(singleReview[2] == 4){
+                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+
+
+              }
+              else if(singleReview[2] == 5){
+                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
+                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+
+
+              }
+              else{
+                alert("something went wrong with number of stars");
+              }
+
+              cells1 += '<p style="font-size:15px;font-weight: bold;">'+singleReview[3]+'</p>'+
+                      '</div>'+
+                      '<div class="reviewDescription">'+
+                        '<p style="font-size:15px;">'+singleReview[4]+'</p>'+
+                      '</div>'+
+                    '</div>';
+
+
+
+
+
+
+          }
+
+
+          /*
+                  <div class="review">
+                    <div class="reviewer" >
+                      <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
+                      <p style="font-size:18px;">NeverSnack</p>
+                    </div>
+                    <div class="reviewStars" style="margin-top:-10px;">
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>
+                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
+                      <p style="font-size:15px;font-weight: bold;">Serious Understandable Discussion</p>
+                    </div>
+                    <div class="reviewDescription">
+                      <p style="font-size:15px;">Awesome but not for the faint hearted.
+                        Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
+                      </p>
+                    </div>
+                  </div>
+          */
+
+
+
+          $("#reviewBox").append(cells1);
           $("#ViewProfilePage").show();
         });
 
@@ -926,67 +1052,6 @@
         <div class="cell small-5 medium-5" style="padding-left:1em;text-align:left;">
           <h5 style="text-decoration: underline;">Reviews</h5>
           <div id=reviewBox>
-
-            <div class="review">
-              <div class="reviewer" >
-                <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
-                <p style="font-size:18px;">NeverSnack</p>
-              </div>
-              <div class="reviewStars" style="margin-top:-10px;">
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                <p style="font-size:15px;font-weight: bold;">Serious Understandable Discussion</p>
-              </div>
-              <div class="reviewDescription">
-                <p style="font-size:15px;">Awesome but not for the faint hearted.
-                  Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
-                </p>
-              </div>
-            </div>
-
-            <div class="review">
-              <div class="reviewer" >
-                <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
-                <p style="font-size:18px;">SomeSnacks</p>
-              </div>
-              <div class="reviewStars" style="margin-top:-10px;">
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                <p style="font-size:15px;font-weight: bold;">Serious Understandable Discussion</p>
-              </div>
-              <div class="reviewDescription">
-                <p style="font-size:15px;">Awesome but not for the faint hearted.
-                  Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
-                </p>
-              </div>
-            </div>
-
-            <div class="review">
-              <div class="reviewer" >
-                <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
-                <p style="font-size:18px;">AlwaysSnack</p>
-              </div>
-              <div class="reviewStars" style="margin-top:-10px;">
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                <i class="fi-star" style="margin-top:-12px;color:gold;float:left;margin-right:10px;"></i>
-                <p style="font-size:15px;font-weight: bold;">Serious Understandable Discussion</p>
-              </div>
-              <div class="reviewDescription">
-                <p style="font-size:15px;">Awesome but not for the faint hearted.
-                  Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
-                </p>
-              </div>
-            </div>
-
 
           </div>
         </div>

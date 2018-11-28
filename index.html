@@ -101,6 +101,8 @@
         var reviewAverage = 4;
         var skills = ["Data Analytics","Marketing","AWS","Snacking"];
         var userBio = ["Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned."];
+        var compensation = ['50', 'USD', true, true]; //first true = accepts equivalent
+                                                      //2nd true = Accepts Private Shares
 
         var userProject1 = ["FritoLay","https://www.fritolay.com","Web Design"];
         var userProject2 = ["Takis","https://www.taquitos.net/chips/Takis-Huakamoles","Marketing"];
@@ -114,7 +116,10 @@
         var userReview4 = ["./pics/daft.png","SometimesSnack",1,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
         var userReview5 = ["./pics/bigHead.png","AlwaysCrunch",5,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
 
-        var userReviews = [userReview1,userReview2,userReview3,userReview4,userReview5];
+      //  var userReviews = [userReview1,userReview2,userReview3,userReview4,userReview5];
+        var userReviews = [userReview1,userReview2,userReview3];
+
+
         /*-------------------------------------------------------------------------------- */
 
         $('a[href*="#"]')
@@ -205,73 +210,99 @@
             $("#DashboardPage").fadeIn();
         });
 
+
+
         $("#ViewProfileButton").click(function(){
           $(".navMenuItem").hide();
           $("#reviewBox").empty();
+          $("#profileBanner").empty();
+          $("#averageRating").empty();
+          $("#CompensationRate").empty();
+          $("#skillsBanner").empty();
+          $("#ProjectsBox").empty();
+
+          var proj = "";
+          proj+='<h5 style="text-decoration: underline;">Companies/Projects/Collaborations</h5>';
+
+          for (i = 0; i < userProjects.length; i++) {
+              var singleProject = userProjects[i];
+
+              proj += '<h6><a href="'+ singleProject[1] +' ">'+singleProject[0]+'</a>'+' - ' + singleProject[2] + '</h6>';
+          }
 
 
 
-          var cells1;
 
-          for (i = 0; i < userReviews.length; i++) {
-              var singleReview = userReviews[i];
 
+
+
+          var skill="";
+
+          for (i = 0; i < skills.length; i++) {
+              var singleSkill = skills[i];
+
+              skill += '<div class="cell auto">'+
+                          '<span class="warning label" style="width:100px;text-align:center;">'+singleSkill+'</span>'+
+                        '</div>';
+          }
+
+          var avgRating = "";
+          var cells1 = "";
+
+          var compen = '<h6>' + compensation[0] + ' ' + compensation[1] + '/Hour';
+          if(compensation[2] == true){ //allows equivalent compensation
+            compen += ' or Equivalent</h6>';
+          }
+          else{
+            compen += '</h6>';
+          }
+          if(compensation[3] == true){ //allows private shares
+            compen += '<h6>Accepts Private Shares</h6>';
+          }
+
+
+
+
+
+
+          for(i = 0; i < reviewAverage; i++) {
+            avgRating += '<div class="cell auto">' +
+                            '<i class="fi-star" style="color:gold;font-size: 40px;"></i>'+
+                          '</div>';
+          }
+          for(i = 0; i < (5 - reviewAverage); i++) {
+            avgRating += '<div class="cell auto">' +
+                            '<i class="fi-star" style="color:gray;font-size: 40px;"></i>'+
+                          '</div>';
+          }
+
+
+
+
+          var banner ='<img src="'+ profilePic +'" alt="Avatar" style="border-radius: 50%;height:170px; width: 170px;margin-top:12px;">'+
+                      '<h5>'+ userName +'</h5>';
+
+
+
+
+
+          for (j = 0; j < userReviews.length; j++) {
+              var singleReview = userReviews[j];
 
               cells1 += '<div class="review">'+
                           '<div class="reviewer" >'+
                             '<img src=' + singleReview[0]+' alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">'+
                             '<p style="font-size:18px;">'+ singleReview[1] +'</p>'+
-                        "</div>";
+                        "</div>"+
+                        '<div class="reviewStars" style="margin-top:-10px;">';
 
-              if(singleReview[2] == 1){
-                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
 
+              for(i = 0; i < singleReview[2]; i++) {
+                cells1 += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
               }
-              else if(singleReview[2] == 2){
-                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
 
-              }
-              else if(singleReview[2] == 3){
-                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
-
-              }
-              else if(singleReview[2] == 4){
-                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
-
-
-              }
-              else if(singleReview[2] == 5){
-                cells1 += '<div class="reviewStars" style="margin-top:-10px;">'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>'+
-                            '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
-
-
-              }
-              else{
-                alert("something went wrong with number of stars");
+              for(i = 0; i < (5 - singleReview[2]); i++) {
+                cells1 += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
               }
 
               cells1 += '<p style="font-size:15px;font-weight: bold;">'+singleReview[3]+'</p>'+
@@ -281,39 +312,16 @@
                       '</div>'+
                     '</div>';
 
-
-
-
-
-
           }
 
 
-          /*
-                  <div class="review">
-                    <div class="reviewer" >
-                      <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
-                      <p style="font-size:18px;">NeverSnack</p>
-                    </div>
-                    <div class="reviewStars" style="margin-top:-10px;">
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                      <p style="font-size:15px;font-weight: bold;">Serious Understandable Discussion</p>
-                    </div>
-                    <div class="reviewDescription">
-                      <p style="font-size:15px;">Awesome but not for the faint hearted.
-                        Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!
-                      </p>
-                    </div>
-                  </div>
-          */
 
-
-
+          $("#profileBanner").append(banner);
+          $("#averageRating").append(avgRating);
+          $("#CompensationRate").append(compen);
+          $("#skillsBanner").append(skill);;
           $("#reviewBox").append(cells1);
+          $("#ProjectsBox").append(proj);
           $("#ViewProfilePage").show();
         });
 
@@ -996,51 +1004,24 @@
         <div class="cell small-3 medium-3">
           <button type="button" class="success button" style="width:200px;margin-left:2em;margin-top:2em;">Contact</button>
         </div>
-        <div class="cell small-6 medium-6">
-          <img src="./pics/bigHead.png" alt="Avatar" style="border-radius: 50%;height:170px; width: 170px;margin-top:12px;">
-          <h5>kingSnackMan</h5>
+        <div class="cell small-6 medium-6" id="profileBanner";>
+
         </div>
         <div class="cell small-3 medium-3">
           <div style="margin-right:2em;margin-top:1em;">
-            <div class="grid-x">
-              <div class="cell auto">
-                <i class="fi-star" style="color:gold;font-size: 40px;"></i>
-              </div>
-              <div class="cell auto">
-                <i class="fi-star" style="color:gold;font-size: 40px;"></i>
-              </div>
-              <div class="cell auto">
-                <i class="fi-star" style="color:gold;font-size: 40px;"></i>
-              </div>
-              <div class="cell auto">
-                <i class="fi-star" style="color:gold;font-size: 40px;"></i>
-              </div>
-              <div class="cell auto">
-                <i class="fi-star" style="color:gray;font-size: 40px;"></i>
-              </div>
+            <div class="grid-x" id="averageRating">
+
             </div>
           </div>
 
           <div id="CompensationRate">
-            <h6>50 USD/hr or Equivalent</h6>
-            <h6>Accepts Private Shares</h6>
+
           </div>
 
         </div>
       </div>
-      <div class="grid-x" style="height: 50px;background-color: lightblue;">
-        <div class="cell auto">
-          <span class="warning label" style="width:100px;text-align:center;">Data Analytics</span>
-        </div>
-        <div class="cell auto">
-          <span class="warning label" style="width:100px;text-align:center;">Marketing</span>
-        </div>
-        <div class="cell auto">
-          <span class="warning label" style="width:100px;text-align:center;">AWS</span>
-        </div>
-        <div class="cell auto">
-          <span class="warning label" style="width:100px;text-align:center;">Snacking</span>
-        </div>
+      <div class="grid-x" style="height: 50px;background-color: lightblue;" id="skillsBanner">
+
       </div>
       <div class="grid-x" style="height: 500px;">
         <div class="cell small-7 medium-7" style="padding-left:1em;text-align:left;">
@@ -1057,20 +1038,13 @@
         </div>
       </div>
       <div class="grid-x" style="height: 300px;">
-        <div class="cell small-7 medium-7" style="padding-left:1em;text-align:left;">
-          <h5 style="text-decoration: underline;">Companies/Projects/Collaborations</h5>
-          <h6>
-            Snack City Electrons - CEO
-          </h6>
-          <h6>
-            Kitkat Records - Web Design
-          </h6>
-          <h6>
-            Salty and Savory - Advisor
-          </h6>
+        <div class="cell small-7 medium-7" style="padding-left:1em;text-align:left;" id="ProjectsBox">
+
+
         </div>
 
       </div>
+      <!--
       <h5 style="text-decoration: underline;padding-left:1em;">Portfolio</h5>
       <div class="grid-x grid-margin-x" style="margin-left: 10px;margin-right: 10px; margin-top: 20px; margin-bottom: 10px;">
         <div class="cell small-4 medium-4" style="height: 200px;background-size: cover;background-image: url('./pics/pic1.jpg');"></div>
@@ -1087,6 +1061,7 @@
         <div class="cell small-4 medium-4" style="height: 200px;background-size: cover;background-image: url('./pics/pic8.jpg');"></div>
         <div class="cell small-4 medium-4" style="height: 200px;background-size: cover;background-image: url('./pics/diffract.jpg');"></div>
       </div>
+    -->
 
     </div>
 

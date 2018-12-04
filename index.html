@@ -99,7 +99,10 @@
         /*-------------------------------View Profile Data----------------------------------- */
 
         var reviewAverage = 4;
+  
         var skills = ["Data Analytics","Marketing","AWS","Snacking"];
+
+
         var userBio = ["Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned."];
         var compensation = ['50', 'USD', true, true]; //first true = accepts equivalent
                                                       //2nd true = Accepts Private Shares
@@ -118,6 +121,32 @@
 
       //  var userReviews = [userReview1,userReview2,userReview3,userReview4,userReview5];
         var userReviews = [userReview1,userReview2,userReview3];
+
+        /*----------------------------Edit Profile-----------------------------------------*/
+        $("#skillsBox").empty();
+
+        var moreButtons="";
+
+        for(i=0;i<skills.length;i++){
+        var singleSkill = skills[i];
+        var skillButtonID = "skillButton" + i.toString();
+
+        
+        moreButtons +=  '<div class="cell auto" id="skillButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:150px;text-align:center;">'+singleSkill+'<button class="skillButton" style="float:right;" id='+ skillButtonID +'>x</button>'+'</span>'+'</div>';
+        } 
+  
+
+        $("#skillsBox").append(moreButtons);
+
+        $(".skillButton").click(function() {
+          //alert($(this).attr('id'));
+          var childID = $(this).attr('id');
+          var lastChar = childID[childID.length -1];
+          var parentID = 'skillButtonContainer'+lastChar;
+          //alert(parentID);
+          $("#"+parentID).fadeOut();
+
+        });
 
 
         /*-------------------------------------------------------------------------------- */
@@ -1080,14 +1109,13 @@
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Skills</h4>
             <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
-            <div>
-              <div class="callout warning label"  style="padding: 1em;width:120px;height:50px;text-align:left;float:left;" data-closable>
-                <button class="close-button" aria-label="Close alert" type="button" data-close>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h6>Snacking</h6>
+            
+              <div class="grid-x" id="skillsBox">
+
+                
+
               </div>
-            </div>
+
           </div>
           <div id="editCompensation" style="padding:1em;">
             <h4 style="text-align:left;">Requested Hourly Compensation</h4>
@@ -1110,6 +1138,8 @@
                 </div>
               </div>
             </div>
+
+
 
 
           <div style="padding:1em;height:300px;">

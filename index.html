@@ -113,6 +113,12 @@
         var userProject4 = ["UTZ","https://www.utzsnacks.com","Quality Control"];
         var userProjects = [userProject1,userProject2,userProject3,userProject4];
 
+        var externalLink1 = ["FritoLay","https://www.fritolay.com","Web Design"];
+        var externalLink2 = ["Takis","https://www.taquitos.net/chips/Takis-Huakamoles","Marketing"];
+        var externalLink3 = ["CornChip","http://cornchip.com","CEO"];
+        var externalLink4 = ["UTZ","https://www.utzsnacks.com","Quality Control"];
+        var externalLinks = [externalLink1,externalLink2,externalLink3,externalLink4];
+
         var userReview1 = ["./pics/daft.png","NeverSnack",3,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
         var userReview2 = ["./pics/khomeni.png","AlwaysSnack",4,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
         var userReview3 = ["./pics/manson.png","NeverCrunch",5,"Serious Understandable Discussion","Awesome but not for the faint hearted. Unless you start with a strong math background to the level of tensors, you should expect to spend a lot of time in Wikipedia and Wolfram learning the math. But if you do, it is an incredibly rewarding book that leaves you comfortable reading the current literature and thinking on quantum gravity. No small feat!"];
@@ -125,6 +131,8 @@
         /*----------------------------Edit Profile-----------------------------------------*/
         $("#skillsBox").empty();
 
+        $("textarea#bioTextArea").val(userBio);
+
         var moreButtons="";
 
         for(i=0;i<skills.length;i++){
@@ -134,15 +142,73 @@
         
         moreButtons +=  '<div class="cell auto" id="skillButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:150px;text-align:center;">'+singleSkill+'<button class="skillButton" style="float:right;" id='+ skillButtonID +'>x</button>'+'</span>'+'</div>';
         } 
-  
+
+        
+        var chosenRate = '<h5>'+ compensation[0] + ' '+ compensation[1] +'/Hour</h5>';
+
+ 
+
+
+        var addProject = "";
+
+        for(i=0;i<userProjects.length;i++){
+          var singleProject = userProjects[i];
+          var buttonText = singleProject[0]+" - " + singleProject[1] +" - " + singleProject[2];
+          
+          
+          var projectButtonID = "projectButton" + i.toString();
+
+          
+          addProject +=  '<div class="cell auto" id="projectButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="projectButton" style="float:right;" id='+ projectButtonID +'>x</button>'+'</span>'+'</div>';
+        } 
+
+        var addLink = "";
+
+        for(i=0;i<externalLinks.length;i++){
+          var singleLink = externalLinks[i];
+          var buttonText = singleLink[0]+" - " + singleLink[1] +" - " + singleLink[2];
+          
+          
+          var linkButtonID = "linkButton" + i.toString();
+
+          
+          addLink +=  '<div class="cell auto" id="linkButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="linkButton" style="float:right;" id='+ linkButtonID +'>x</button>'+'</span>'+'</div>';
+        } 
+
+
+        
+        $("#chosenCurrencyBox").append(chosenRate);
 
         $("#skillsBox").append(moreButtons);
+        $("#colabsBox").append(addProject);
+        $("#linksBox").append(addLink);
+
 
         $(".skillButton").click(function() {
           //alert($(this).attr('id'));
           var childID = $(this).attr('id');
           var lastChar = childID[childID.length -1];
           var parentID = 'skillButtonContainer'+lastChar;
+          //alert(parentID);
+          $("#"+parentID).fadeOut();
+
+        });
+
+        $(".projectButton").click(function() {
+          //alert($(this).attr('id'));
+          var childID = $(this).attr('id');
+          var lastChar = childID[childID.length -1];
+          var parentID = 'projectButtonContainer'+lastChar;
+          //alert(parentID);
+          $("#"+parentID).fadeOut();
+
+        });
+
+        $(".linkButton").click(function() {
+          //alert($(this).attr('id'));
+          var childID = $(this).attr('id');
+          var lastChar = childID[childID.length -1];
+          var parentID = 'linkButtonContainer'+lastChar;
           //alert(parentID);
           $("#"+parentID).fadeOut();
 
@@ -1104,7 +1170,9 @@
           </div>
           <div style="padding:1em;height:250px;">
             <h4 style="text-align:left;">Bio</h4>
-            <textarea style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect."></textarea>
+            <textarea id="bioTextArea" style="padding:1em;height:180px;"placeholder="Background, education, intrests, ect.">
+
+            </textarea>
           </div>
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Skills</h4>
@@ -1136,6 +1204,9 @@
                   <input id="formCheckbox1" type="checkbox" stlye="margin-left:10px;"><label for="formCheckbox1">Accept Alternate Currency of Equivalent Value</label>
                   <input id="formCheckbox2" type="checkbox"><label for="formCheckbox1">Accept Private Shares</label>
                 </div>
+                <div id="chosenCurrencyBox">
+
+                </div>
               </div>
             </div>
 
@@ -1152,20 +1223,11 @@
             </label>
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
           </div>
-          <div style="padding:1em;height:250px;">
-            <div class="callout" data-closable>
-              <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <p style="text-align:left;">ChesterChetosCheezeCorp</p>
-            </div>
-            <div class="callout" data-closable>
-              <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <p style="text-align:left;">TonyTheTigerINC</p>
-            </div>
+          <div style="padding:1em;height:250px;" id="colabsBox">
+
+            
           </div>
+
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add External Link</h4>
             <label style="text-align:left;">Link Title
@@ -1176,19 +1238,10 @@
             </label>
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
           </div>
-          <div style="padding:1em;height:350px;">
-            <div class="callout" data-closable>
-              <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <p style="text-align:left;">Github</p>
-            </div>
-            <div class="callout" data-closable>
-              <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <p style="text-align:left;">Twitter</p>
-            </div>
+          <div style="padding:1em;height:350px;" id="linksBox">
+
+            
+
           </div>
         </div>
         <div class="cell auto" style="height: 1500px;"></div>

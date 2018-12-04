@@ -214,6 +214,52 @@
 
         });
 
+        /*----------------------------Search Profiles-----------------------------------------*/
+       
+        var searchedProfile1 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var searchedProfile2 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var searchedProfile3 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+
+        var searchedProfiles = [searchedProfile1,searchedProfile2,searchedProfile3];
+
+
+
+        $("#searchProfilesTable").empty();
+
+        var newReviews = "";
+
+
+        for (j = 0; j < searchedProfiles.length; j++) {
+              var singleProfile = searchedProfiles[j];
+
+              newReviews += '<tr>'+
+                              '<td><div class="reviewer" >'+
+                                '<img src="'+singleProfile[0]+'" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">'+
+                                '<p style="font-size:18px;">'+singleProfile[1]+'</p>'+
+                                '</div>'+
+                                '<div class="reviewStars" style="margin-top:-10px;">';
+
+
+
+              for(i = 0; i < singleProfile[2]; i++) {
+                newReviews += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+              }
+
+              for(i = 0; i < (5 - singleProfile[2]); i++) {
+                newReviews += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+              }
+
+              newReviews +='</div>'+
+                            '</td>'+
+                            '<td>'+singleProfile[3]+'</td>'+
+                            '<td style="text-align:center;">'+singleProfile[4]+'</td>'+
+                            '</tr>';
+
+          }
+
+          $("#searchProfilesTable").append(newReviews);
+
+  
 
         /*-------------------------------------------------------------------------------- */
 
@@ -1176,14 +1222,9 @@
           </div>
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Skills</h4>
-            <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
-            
+            <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">       
               <div class="grid-x" id="skillsBox">
-
-                
-
               </div>
-
           </div>
           <div id="editCompensation" style="padding:1em;">
             <h4 style="text-align:left;">Requested Hourly Compensation</h4>
@@ -1209,10 +1250,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
             <label style="text-align:left;">Company or Project Name
@@ -1239,9 +1276,6 @@
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
           </div>
           <div style="padding:1em;height:350px;" id="linksBox">
-
-            
-
           </div>
         </div>
         <div class="cell auto" style="height: 1500px;"></div>
@@ -1363,7 +1397,7 @@
                 <th style="width:80px;">Rate/hr</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="searchProfilesTable">
               <tr>
                 <td><div class="reviewer" >
                   <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">

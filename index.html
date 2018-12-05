@@ -259,7 +259,110 @@
 
           $("#searchProfilesTable").append(newReviews);
 
-  
+        /*--------------------------------Post Jobs ----------------------------------- */
+
+        var freelancer1 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var freelancer2 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var freelancer3 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var freelancer4 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+        var freelancer5 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
+
+        var freelancers = [freelancer1,freelancer2,freelancer3,freelancer4,freelancer5];
+
+
+
+        $("#postJobsTable").empty();
+
+        var newFreelancers = "";
+
+
+        for (j = 0; j < freelancers.length; j++) {
+              var singleFreelancer = freelancers[j];
+
+              newFreelancers += '<tr>'+
+                              '<td><div class="reviewer" >'+
+                                '<img src="'+singleFreelancer[0]+'" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">'+
+                                '<p style="font-size:18px;">'+singleFreelancer[1]+'</p>'+
+                                '</div>'+
+                                '<div class="reviewStars" style="margin-top:-10px;">';
+
+
+
+              for(i = 0; i < singleFreelancer[2]; i++) {
+                newFreelancers += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+              }
+
+              for(i = 0; i < (5 - singleFreelancer[2]); i++) {
+                newFreelancers += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+              }
+
+              newFreelancers +='</div>'+
+                            '</td>'+
+                            '<td>'+singleFreelancer[3]+'</td>'+
+                            '<td style="text-align:center;">'+singleFreelancer[4]+'</td>'+
+                            '</tr>';
+
+          }
+
+          $("#postJobsTable").append(newFreelancers);
+
+        /*--------------------------------Search Jobs ----------------------------------- */
+
+        var searchedJob1 = ["./pics/job1.png","Universal",4,"Web designer needed for landing page.  Exciting personal cloud project!","250 BAE"];
+        var searchedJob2 = ["./pics/job2.png","Company2",3,"Logo design for online store.","350 BAE"];
+        var searchedJob3 = ["./pics/job2.png","Infinity",5,"Backend for mobile app. Peer to peer lending service for new ghome buyers.","220 BAE"];
+
+        var searchedJobs = [searchedJob1,searchedJob2,searchedJob3];
+
+
+        $("#searchJobsTable").empty();
+
+        var newJobs= "";
+
+
+        for (j = 0; j < searchedJobs.length; j++) {
+              var singleJob = searchedJobs[j];
+
+              newJobs += '<tr>'+
+                              '<td><div class="reviewer" >'+
+                                '<img src="'+singleJob[0]+'" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">'+
+                                '<p style="font-size:18px;">'+singleJob[1]+'</p>'+
+                                '</div>'+
+                                '<div class="reviewStars" style="margin-top:-10px;">';
+
+
+
+              for(i = 0; i < singleJob[2]; i++) {
+                newJobs += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+              }
+
+              for(i = 0; i < (5 - singleJob[2]); i++) {
+                newJobs += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+              }
+
+              newJobs +='</div>'+
+                            '</td>'+
+                            '<td>'+singleJob[3]+'</td>'+
+                            '<td style="text-align:center;">'+singleJob[4]+'</td>'+
+                            '</tr>';
+
+          }
+
+          $("#searchJobsTable").append(newJobs);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         /*-------------------------------------------------------------------------------- */
 
@@ -1614,7 +1717,7 @@
                 <th style="width:80px;">Rate/hr</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="postJobsTable">
               <tr>
                 <td><div class="reviewer" >
                   <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:30px; width: 30px;float:left;margin-right:10px;">
@@ -1843,58 +1946,10 @@
                 <th style="width:20%">Compensation</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="reviewer" >
-                    <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
-                    <p style="font-size:18px;">Universal</p>
-                    </div>
-                    <div class="reviewStars" style="margin-top:-10px;">
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                    </div>
-                </td>
-                <td>Web designer needed for landing page.  Exciting personal cloud project!</td>
-                <td style="text-align:center;">250 BAE</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="reviewer" >
-                    <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
-                    <p style="font-size:18px;">Universal</p>
-                    </div>
-                    <div class="reviewStars" style="margin-top:-10px;">
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                    </div>
-                </td>
-                <td>Logo design for online store. </td>
-                <td style="text-align:center;">350 BAE</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="reviewer" >
-                    <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">
-                    <p style="font-size:18px;">Universal</p>
-                    </div>
-                    <div class="reviewStars" style="margin-top:-10px;">
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>
-                      <i class="fi-star" style="margin-top:-12px;color:gray;float:left;margin-right:10px;"></i>
-                    </div>
-                </td>
-                <td>Backend for mobile app. Peer to peer lending service for new ghome buyers.</td>
-                <td style="text-align:center;">220 BAE</td>
-              </tr>
+            <tbody  id='searchJobsTable'>
+              
+
+
             </tbody>
           </table>
 

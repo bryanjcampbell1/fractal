@@ -373,12 +373,12 @@
         // 18) Type
         
 
-        var companyObject1 = ["./pics/job1.png", "Universal Data", "Control your own data without giving up your privacy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+        var companyObject1 = ["./pics/job1.png", "Universal Data", "Control your own data without giving up your privacy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"],"250,000,000","FRX","ERC-20" ];
  
-      var companyObject2 = ["./pics/job2.png", "Infinity Solutions", "Prototyping need not be a slow and costly process. With Infnty Solutions we make prototypes fast and cheap. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+      var companyObject2 = ["./pics/job2.png", "Infinity Solutions", "Prototyping need not be a slow and costly process. With Infnty Solutions we make prototypes fast and cheap. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"],"220,000,000","BTC","ERC-20" ];
 
 
-      var companyObject3 = ["./pics/job3.png", "MuNu Program", "Reduce friction in complex mechanical systems without oil or grease. Use MuNu magnetic systems. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+      var companyObject3 = ["./pics/job3.png", "MuNu Program", "Reduce friction in complex mechanical systems without oil or grease. Use MuNu magnetic systems. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"],"350,000,000","BEA","ERC-20" ];
 
       var companyObjects = [companyObject1,companyObject2,companyObject3];
 
@@ -422,13 +422,63 @@
   
 
 
+        id="companyShares">
+        $("#companyShares").empty();
+
+        var sharesInfo = '<div class="cell auto"><h5 class="vertical-center">Total Supply of Shares:  '+companyObject1[16]+'</h5></div>'+
+                          '<div class="cell auto"><h5 class="vertical-center">Ticker Symbol:  '+companyObject1[17]+'</h5></div>'+
+                          '<div class="cell auto"><h5 class="vertical-center">Type:  '+companyObject1[18]+'</h5></div>';
+
+
+
         $("#headerAndPitch").append(pitch);  
-
-
-
+        $("#companyShares").append(sharesInfo);
         $("#companyLogoBox1").append(picLink);
         $("#teamPics").append(newPics);
         $("#WhitePaperWebSiteLinks").append(mainLinks);
+
+
+        var compJob1 = ["./pics/job1.png","Universal",4,"Web designer needed for landing page.  Exciting personal cloud project!","250 BAE"];
+        var compJob2 = ["./pics/job1.png","Universal",3,"Logo design for online store.","350 BAE"];
+        var compJob3 = ["./pics/job1.png","Universal",5,"Backend for mobile app. Peer to peer lending service for new ghome buyers.","2 ETH"];
+
+        var compJobs = [compJob1,compJob2,compJob3];
+
+
+        $("#compJobsTable").empty();
+
+        var newCompanyJobs= "";
+
+
+        for (j = 0; j < compJobs.length; j++) {
+              var singleJob = compJobs[j];
+
+              newCompanyJobs += '<tr>'+
+                              '<td><div class="reviewer" >'+
+                                '<img src="'+singleJob[0]+'" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">'+
+                                '<p style="font-size:18px;">'+singleJob[1]+'</p>'+
+                                '</div>'+
+                                '<div class="reviewStars" style="margin-top:-10px;">';
+
+
+
+              for(i = 0; i < singleJob[2]; i++) {
+                newCompanyJobs += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+              }
+
+              for(i = 0; i < (5 - singleJob[2]); i++) {
+                newCompanyJobs += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+              }
+
+              newCompanyJobs +='</div>'+
+                            '</td>'+
+                            '<td>'+singleJob[3]+'</td>'+
+                            '<td style="text-align:center;">'+singleJob[4]+'</td>'+
+                            '</tr>';
+
+          }
+
+          $("#compJobsTable").append(newCompanyJobs);
         
 /*
         for (j = 0; j < searchedJobs.length; j++) {
@@ -2140,7 +2190,9 @@
        </div>
        <div class="cell small-1 medium-1 large-1">
          <hr style="margin:0px;">
-         <div class="grid-x">
+         <div class="grid-x"  id="companyShares">
+
+
            <div class="cell auto">
              <h5 class="vertical-center">Total Supply of Shares: 300,000,000 </h5>
            </div>
@@ -2150,6 +2202,9 @@
            <div class="cell auto">
              <h5 class="vertical-center">Type:  ERC20 </h5>
            </div>
+
+
+
           </div>
          <hr style="margin:0px;">
        </div>
@@ -2163,37 +2218,8 @@
               <th width="150">Table Header</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
-            <tr>
-              <td>Content Goe</td>
-              <td>This is tus.</td>
-              <td>Content Goes</td>
-            </tr>
+          <tbody id="compJobsTable">
+
           </tbody>
         </table>
        </div>

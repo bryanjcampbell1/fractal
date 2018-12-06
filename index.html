@@ -350,19 +350,119 @@
 
           $("#searchJobsTable").append(newJobs);
 
+        /*--------------------------------Your Companies ----------------------------------- */
+
+        // 0)  company logo
+        // 1)  header 
+        // 2)  website pitch
+        // 3)  Whitepaper Link
+        // 4)  Roadmap Link
+        // 5)  Website
+        // 6)  Team1
+        // 7)  Team2
+        // 8)  Team3
+        // 9)  Team4
+        // 10)  Team5 
+        // 11) Link1
+        // 12) Link2
+        // 13) Link3
+        // 14) Link4
+        // 15) Link5
+        // 16) Supply
+        // 17) Symbol
+        // 18) Type
+        
+
+        var companyObject1 = ["./pics/job1.png", "Universal Data", "Control your own data without giving up your privacy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+ 
+      var companyObject2 = ["./pics/job2.png", "Infinity Solutions", "Prototyping need not be a slow and costly process. With Infnty Solutions we make prototypes fast and cheap. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+
+
+      var companyObject3 = ["./pics/job3.png", "MuNu Program", "Reduce friction in complex mechanical systems without oil or grease. Use MuNu magnetic systems. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"] ];
+
+      var companyObjects = [companyObject1,companyObject2,companyObject3];
+
+
+        $("#teamPics").empty();
+        $("#WhitePaperWebSiteLinks").empty();
+        $("#headerAndPitch").empty(); 
+
+        var newPics= "";
+        var mainLinks = "";
+        var picLink = '<img src="' + companyObject1[0] + '" alt="Avatar" style="height:150px; width: 150px;">';
+
+        for (j = 6; j < 11; j++) {
+          var company = companyObject1[j];
+          newPics += '<div class="cell auto">'+
+                        '<img src="' +  company[0]+'" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">'+
+                        '<h5>'+company[1]+'</h5></div>';
+
+          
+
+        }
+
+        if(companyObject1[3] != ""){
+         mainLinks += '<a class="expanded button" href="'+companyObject1[3]+'" >'+'Read the White Paper</a>';
+        } 
+        if(companyObject1[4] != ""){
+         mainLinks += '<a class="expanded button" href="'+companyObject1[4]+'" >'+'View Website</a>';
+        } 
+        if(1 ==1 ){
+         mainLinks += '<a class="expanded button">'+'Read Reviews</a>';
+        } 
+        if(companyObject1[5] != ""){
+         mainLinks += '<a class="expanded button" href="'+companyObject1[5]+'" >'+'Roadmap</a>';
+        }
+
+
+        var pitch = '<h3>'+companyObject1[1]+'</h3>'+
+                    '<div style="text-align: left; margin-left:20px">'+companyObject1[2]+
+                    '</div>';
+
+  
+
+
+        $("#headerAndPitch").append(pitch);  
 
 
 
+        $("#companyLogoBox1").append(picLink);
+        $("#teamPics").append(newPics);
+        $("#WhitePaperWebSiteLinks").append(mainLinks);
+        
+/*
+        for (j = 0; j < searchedJobs.length; j++) {
+              var singleJob = searchedJobs[j];
+
+              newJobs += '<tr>'+
+                              '<td><div class="reviewer" >'+
+                                '<img src="'+singleJob[0]+'" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">'+
+                                '<p style="font-size:18px;">'+singleJob[1]+'</p>'+
+                                '</div>'+
+                                '<div class="reviewStars" style="margin-top:-10px;">';
 
 
 
+              for(i = 0; i < singleJob[2]; i++) {
+                newJobs += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+              }
 
+              for(i = 0; i < (5 - singleJob[2]); i++) {
+                newJobs += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+              }
 
+              newJobs +='</div>'+
+                            '</td>'+
+                            '<td>'+singleJob[3]+'</td>'+
+                            '<td style="text-align:center;">'+singleJob[4]+'</td>'+
+                            '</tr>';
 
+          }
 
+          
 
-
-
+        
+*/
 
         /*-------------------------------------------------------------------------------- */
 
@@ -1992,54 +2092,50 @@
        </div>
        <div class="cell small-2 medium-2 large-2" id="companyHeaderAndLogo" >
          <div style="height:180px;background-size: cover;background-image: url('./pics/diffract.jpg');">
-           <div style="padding-top: 20px;">
-             <img src="./pics/logo2.png" alt="Avatar" style="height:150px; width: 150px;">
+           <div style="padding-top: 20px;" id="companyLogoBox1">
+
+
+
+
           </div>
          </div>
        </div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        <div class="cell small-3 medium-3 large-3">
          <div class="grid-x">
            <div class="cell small-6 medium- large-6" id="headerAndPitch">
-             <h3>Header</h3>
-             <div style="text-align: left; margin-left:20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+             
            </div>
            <div class="cell small-6 medium-6 large-6">
-             <div style="width:400px; margin-left: 80px;margin-top: 40px;">
-               <a class="expanded button" href="#0">Read the White Paper</a>
-               <a class="expanded button" href="#0">View Website</a>
-               <a class="expanded button" href="#0">Read Reviews</a>
-               <a class="expanded button" href="#0">Roadmap</a>
+             <div style="width:400px; margin-left: 80px;margin-top: 40px;"  id="WhitePaperWebSiteLinks">
+               
+
              </div>
            </div>
          </div>
        </div>
        <div class="cell small-3 medium-3 large-3">
          <h4 style="text-align: left;margin-left:12px;">Meet the Team</h4>
-         <div class="grid-x">
+         <div class="grid-x" id="teamPics">
 
-           <div class="cell auto">
-             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
-             <h5>Ben - Advisor</h5>
-           </div>
-           <div class="cell auto">
-             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
-             <h5>Jimmy - CTO</h5>
-           </div>
-           <div class="cell auto">
-             <img src="./pics/khomeni.png" alt="Avatar" style="border-radius: 50%;height:150px; width: 150px;">
-             <h5>George - CEO</h5>
-           </div>
-           <div class="cell auto">
-             <img src="./pics/manson.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
-             <h5>Mikey - Design</h5>
-           </div>
-           <div class="cell auto">
-             <img src="./pics/daft.png" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">
-             <h5>T.Guns - Strategy</h5>
-           </div>
+
+
          </div>
        </div>
        <div class="cell small-1 medium-1 large-1">

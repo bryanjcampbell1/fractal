@@ -185,31 +185,24 @@
 
 
         $(".skillButton").click(function() {
-          //alert($(this).attr('id'));
           var childID = $(this).attr('id');
           var lastChar = childID[childID.length -1];
           var parentID = 'skillButtonContainer'+lastChar;
-          //alert(parentID);
           $("#"+parentID).fadeOut();
-
         });
 
         $(".projectButton").click(function() {
-          //alert($(this).attr('id'));
           var childID = $(this).attr('id');
           var lastChar = childID[childID.length -1];
           var parentID = 'projectButtonContainer'+lastChar;
-          //alert(parentID);
           $("#"+parentID).fadeOut();
 
         });
 
         $(".linkButton").click(function() {
-          //alert($(this).attr('id'));
           var childID = $(this).attr('id');
           var lastChar = childID[childID.length -1];
           var parentID = 'linkButtonContainer'+lastChar;
-          //alert(parentID);
           $("#"+parentID).fadeOut();
 
         });
@@ -538,7 +531,55 @@
           }
 
 
+        /*---------------------------TokenizeShares------------------------------- */
+        $("#verticalCompanyButtonBar").empty();
+
+        var verticalButton ="";
+
+        for (j = 0; j < companyObjects.length; j++) {
+          var company = companyObjects[j];
+          
+          verticalButton += '<div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">'+
+                              '<a href="#0" class="verticalCompanyButton" id=companyButton'+j.toString()+'>'+
+                               '<img src="'+company[0]+'" alt="Avatar" style="height:75px; width: 75px;">'+
+                              '</a>'+
+                              '</div>'+
+                              '<hr style="margin: 0px;">';
+
+          
+        }
+
+        $("#verticalCompanyButtonBar").append(verticalButton);   
+
+        $(".verticalCompanyButton").click(function() {
+          var childID = $(this).attr('id');
+          var lastChar = childID[childID.length -1];
+          fillTokenizeContent(lastChar);
+
+       
+        });
+
+        if(companyObjects.length != 0){
+          fillTokenizeContent(0);
+        }
+        else{
+          //add message describing how page will look
+        }
+
+        
+        function fillTokenizeContent(x) {
+          var selected = companyObjects[x];
+
+          $("#tokenizeCompanyName").empty();
+          $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>"+selected[1]+"<h5>");
+
+
+        }
+
+
+                 
         /*-------------------------------------------------------------------------------- */
+
 
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
@@ -903,79 +944,9 @@
         });
 
 
-        $("#companyButton1").click(function(){
-            $("#tokenizeCompanyName").empty();
-            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName1<h5>");
-        });
-        $("#companyButton2").click(function(){
-            $("#tokenizeCompanyName").empty();
-            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName2<h5>");
-        });
-        $("#companyButton3").click(function(){
-            $("#tokenizeCompanyName").empty();
-            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName3<h5>");
-        });
-        $("#companyButton4").click(function(){
-            $("#tokenizeCompanyName").empty();
-            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName4<h5>");
-        });
-        $("#companyButton5").click(function(){
-            $("#tokenizeCompanyName").empty();
-            $("#tokenizeCompanyName").append("<h5 style='margin-top:15px;text-align:left;'>CompanyName5<h5>");
-        });
-
+   
       /*-----------------------------*/
 
-      $("#companiesTopBarButton1").click(function(){
-        $("#companyHeaderAndLogo").empty();
-        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:yellow;">'+
-          '<div style="padding-top: 20px;">'+
-            '<img src="./pics/logo1.png" alt="Avatar" style="height:150px; width: 150px;">'+
-         '</div>'+
-        '</div>');
-        $("#headerAndPitch").empty();
-        $("#headerAndPitch").append('<h3>Header 1</h3>'+
-        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
-        '</div>');
-      });
-
-
-      $("#companiesTopBarButton2").click(function(){
-        $("#companyHeaderAndLogo").empty();
-        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:purple;">'+
-          '<div style="padding-top: 20px;">'+
-            '<img src="./pics/logo2.png" alt="Avatar" style="height:150px; width: 150px;">'+
-         '</div>'+
-        '</div>');
-        $("#headerAndPitch").empty();
-        $("#headerAndPitch").append('<h3>Header 2</h3>'+
-        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
-        '</div>');
-      });
-      $("#companiesTopBarButton3").click(function(){
-        $("#companyHeaderAndLogo").empty();
-        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:blue;">'+
-          '<div style="padding-top: 20px;">'+
-            '<img src="./pics/job1.png" alt="Avatar" style="height:150px; width: 150px;">'+
-         '</div>'+
-        '</div>');
-        $("#headerAndPitch").empty();
-        $("#headerAndPitch").append('<h3>Header 3</h3>'+
-        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
-        '</div>');
-      });
-      $("#companiesTopBarButton4").click(function(){
-        $("#companyHeaderAndLogo").empty();
-        $("#companyHeaderAndLogo").append('<div style="height:180px; background-color:orange;">'+
-          '<div style="padding-top: 20px;">'+
-            '<img src="./pics/job3.png" alt="Avatar" style="height:150px; width: 150px;">'+
-         '</div>'+
-        '</div>');
-        $("#headerAndPitch").empty();
-        $("#headerAndPitch").append('<h3>Header 4</h3>'+
-        '<div style="text-align: left; margin-left:20px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy.' +
-        '</div>');
-      });
       $("#addCompanyButton").click(function(){
         $(".navMenuItem").fadeOut();
         $("#CreateCompanyPage").fadeIn();
@@ -2462,31 +2433,10 @@
     <div class="navMenuItem" id="TokenizeSharesPage" >
       <div class="grid-x">
         <div class="cell small-2 medium-2" style="height: 900px;background:gray;">
-          <div class="grid-y">
-            <div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">
-              <a href="#0" id=companyButton1>
-                <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
-              </a>
-            </div>
-            <hr style="margin: 1px;">
-            <div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">
-              <a href="#0" id=companyButton2>
-                <img src="./pics/job1.png" alt="Avatar" style="height:75px; width: 75px;">
-              </a>
-            </div>
-            <hr style="margin: 0px;">
-            <div class="cell small-3 medium-3" style="height: 100px;margin-top:25px;">
-              <a href="#0" id=companyButton3>
-                <img src="./pics/job2.png" alt="Avatar" style="height:75px; width: 75px;padding-top:15;">
-              </a>
-            </div>
-            <hr style="margin: 0px;">
-            <div class="cell small-3 medium-3" style="height: 100px;margin-top:25px;">
-              <a href="#0" id=companyButton4>
-                <img src="./pics/job3.png" alt="Avatar" style="height:75px; width: 75px;">
-              </a>
-            </div>
-            <hr style="margin: 0px;">
+          <div class="grid-y"  id="verticalCompanyButtonBar">
+            
+
+
           </div>
         </div>
         <div class="cell small-10 medium-10" style="height: 900px;padding: 20px;">
@@ -2497,7 +2447,7 @@
             <div class="cell small-5 medium-5" >
               <div class="grid-y">
                 <div class="cell" id="tokenizeCompanyName" style="height: 50px;text-align: center;">
-                  <h5 style="margin-top:15px;text-align:left;">CompanyName1<h5>
+                  <h5 style="margin-top:15px;text-align:left;"><h5>
                 </div>
                 <div class="cell" style="height: 50px;text-align: center;">
                   <input type="text" placeholder="BTC">

@@ -487,7 +487,7 @@
           for (j = 0; j < companyObjects.length; j++) {
           var company = companyObjects[j];
           
-          companyButtons += '<div class="cell auto" id="companyButton' + j.toString()+ '">'+
+          companyButtons += '<div class="cell auto companyButton" id="companyButton' + j.toString()+ '">'+
                               '<a href="#0" >'+
                                '<img src="' +  company[0]+'" alt="Avatar" style="height:75px; width: 75px;">'+
                               '</a>'+
@@ -499,7 +499,126 @@
         companyButtons+='<div class="cell auto" style="margin-top:10px;"><a href="#0" id=addCompanyButton><i class="fi-plus" style="font-size: 40px;height:75px; width: 75px;"></i></a></div>';
 
 
-          $("#companiesTopBar").append(companyButtons);
+        $("#companiesTopBar").append(companyButtons);
+
+        $(".companyButton").click(function() {
+          var childID = $(this).attr('id');
+          var lastChar = childID[childID.length -1];
+          fillCompanyContent(lastChar);
+
+        });
+
+        function fillCompanyContent(x) {
+          $("#teamPics").empty();
+          $("#WhitePaperWebSiteLinks").empty();
+          $("#headerAndPitch").empty();
+          $("#companyShares").empty();
+          $("#WhitePaperWebSiteLinks").empty();
+          $("#companyLogoBox1").empty();
+
+
+
+            var newPics= "";
+            var mainLinks = "";
+            var company_object = companyObjects[x]
+
+            var picLink = '<img src="' + company_object[0] + '" alt="Avatar" style="height:150px; width: 150px;">';
+
+            for (j = 6; j < 11; j++) {
+              var company = company_object[j];
+              newPics += '<div class="cell auto">'+
+                            '<img src="' +  company[0]+'" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">'+
+                            '<h5>'+company[1]+'</h5></div>';
+
+              
+
+            }
+
+            if(company_object[3] != ""){
+             mainLinks += '<a class="expanded button" href="'+company_object[3]+'" >'+'Read the White Paper</a>';
+            } 
+            if(company_object[4] != ""){
+             mainLinks += '<a class="expanded button" href="'+company_object[4]+'" >'+'View Website</a>';
+            } 
+            if(1 ==1 ){
+             mainLinks += '<a class="expanded button">'+'Read Reviews</a>';
+            } 
+            if(company_object[5] != ""){
+             mainLinks += '<a class="expanded button" href="'+company_object[5]+'" >'+'Roadmap</a>';
+            }
+
+
+            var pitch = '<h3>'+company_object[1]+'</h3>'+
+                        '<div style="text-align: left; margin-left:20px">'+company_object[2]+
+                        '</div>';
+
+      
+
+
+            id="companyShares">
+            $("#companyShares").empty();
+
+            var sharesInfo = '<div class="cell auto"><h5 class="vertical-center">Total Supply of Shares:  '+company_object[16]+'</h5></div>'+
+                              '<div class="cell auto"><h5 class="vertical-center">Ticker Symbol:  '+company_object[17]+'</h5></div>'+
+                              '<div class="cell auto"><h5 class="vertical-center">Type:  '+company_object[18]+'</h5></div>';
+
+
+
+            $("#headerAndPitch").append(pitch);  
+            $("#companyShares").append(sharesInfo);
+            $("#companyLogoBox1").append(picLink);
+            $("#teamPics").append(newPics);
+            $("#WhitePaperWebSiteLinks").append(mainLinks);
+
+          }
+
+
+            var compJob1 = ["./pics/job1.png","Universal",4,"Web designer needed for landing page.  Exciting personal cloud project!","250 BAE"];
+            var compJob2 = ["./pics/job1.png","Universal",3,"Logo design for online store.","350 BAE"];
+            var compJob3 = ["./pics/job1.png","Universal",5,"Backend for mobile app. Peer to peer lending service for new ghome buyers.","2 ETH"];
+
+            var compJobs = [compJob1,compJob2,compJob3];
+
+
+            $("#compJobsTable").empty();
+
+            var newCompanyJobs= "";
+
+
+            for (j = 0; j < compJobs.length; j++) {
+                  var singleJob = compJobs[j];
+
+                  newCompanyJobs += '<tr>'+
+                                  '<td><div class="reviewer" >'+
+                                    '<img src="'+singleJob[0]+'" alt="Avatar" style="height:75px; width: 75px;float:left;margin-right:10px;">'+
+                                    '<p style="font-size:18px;">'+singleJob[1]+'</p>'+
+                                    '</div>'+
+                                    '<div class="reviewStars" style="margin-top:-10px;">';
+
+
+
+                  for(i = 0; i < singleJob[2]; i++) {
+                    newCompanyJobs += '<i class="fi-star" style="margin-top:-12px;color:gold;float:left;"></i>';
+                  }
+
+                  for(i = 0; i < (5 - singleJob[2]); i++) {
+                    newCompanyJobs += '<i class="fi-star" style="margin-top:-12px;color:gray;float:left;"></i>';
+                  }
+
+                  newCompanyJobs +='</div>'+
+                                '</td>'+
+                                '<td>'+singleJob[3]+'</td>'+
+                                '<td style="text-align:center;">'+singleJob[4]+'</td>'+
+                                '</tr>';
+
+              }
+
+              $("#compJobsTable").append(newCompanyJobs);
+        
+
+
+
+
 
 
           

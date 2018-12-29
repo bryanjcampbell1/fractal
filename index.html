@@ -153,26 +153,26 @@
 
         for(i=0;i<userProjects.length;i++){
           var singleProject = userProjects[i];
-          var buttonText = singleProject[0]+" - " + singleProject[1] +" - " + singleProject[2];
+          var buttonText = singleProject[0]+" - " + singleProject[2];
 
 
           var projectButtonID = "projectButton" + i.toString();
 
 
-          addProject +=  '<div class="cell auto" id="projectButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="projectButton" style="float:right;" id='+ projectButtonID +'>x</button>'+'</span>'+'</div>';
+          addProject +=  '<div class="cell auto" id="projectButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:300px;text-align:left;">'+buttonText+'<button class="projectButton" style="float:right;" id='+ projectButtonID +'>x</button>'+'</span>'+'</div>';
         }
 
         var addLink = "";
 
         for(i=0;i<externalLinks.length;i++){
           var singleLink = externalLinks[i];
-          var buttonText = singleLink[0]+" - " + singleLink[1] +" - " + singleLink[2];
+          var buttonText = singleLink[0]+" - " + singleLink[2];
 
 
           var linkButtonID = "linkButton" + i.toString();
 
 
-          addLink +=  '<div class="cell auto" id="linkButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="linkButton" style="float:right;" id='+ linkButtonID +'>x</button>'+'</span>'+'</div>';
+          addLink +=  '<div class="cell auto" id="linkButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:300px;text-align:left;">'+buttonText+'<button class="linkButton" style="float:right;" id='+ linkButtonID +'>x</button>'+'</span>'+'</div>';
         }
 
 
@@ -1494,7 +1494,7 @@
 
     <div class="navMenuItem" id="EditProfilePage" >
       <div class="grid-x">
-        <div class="cell small-7 medium-7" style="height: 1500px;">
+        <div class="cell small-6 medium-6" style="height: 1500px;">
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Profile Picture</h4>
             <img src="./pics/bigHead.png" style="height:150px;width:150px;float:left;"></img>
@@ -1513,20 +1513,7 @@
               </div>
           </div>
 
-          <div style="padding:1em;height:300px;">
-            <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
-            <label style="text-align:left;">Company or Project Name
-              <input type="text" placeholder="Company or Project Name" aria-describedby="exampleHelpText">
-            </label>
-            <label style="text-align:left;">Company or Project Link
-              <input type="text" placeholder="Web Address or Company Code" aria-describedby="exampleHelpText">
-            </label>
-            <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
-          </div>
-          <div style="padding:1em;height:250px;" id="colabsBox">
 
-
-          </div>
 
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add External Link</h4>
@@ -1538,12 +1525,12 @@
             </label>
             <button type="button" class="button" style="position:absolute;left:1em;">Add</button>
           </div>
-          <div style="padding:1em;height:350px;" id="linksBox">
+          <div style="padding:1em;height:350px;float:left;" id="linksBox">
           </div>
         </div>
         <div class="cell auto" style="height: 1500px;">
             <div id="editCompensation" style="padding:1em;">
-            <h5 style="text-align:left;">Requested Hourly Compensation</h5>
+                <h5 style="text-align:left;">Requested Hourly Compensation</h5>
                 <div class="grid-x">
                     <div class="cell small-6 medium-6" >
                       <input type="text" placeholder="50" style="margin-top:4px;" aria-describedby="exampleHelpText">
@@ -1566,9 +1553,20 @@
                     <input id="formCheckbox2" type="checkbox"><label for="formCheckbox1">Accept Private Shares</label></input>
                 </div>
                 <div id="chosenCurrencyBox" style="text-align:left;"></div>
-
-
             </div>
+
+
+            <div style="padding:1em;height:300px;">
+                <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
+                <label style="text-align:left;">Company or Project Name
+                  <input type="text" placeholder="Company or Project Name" aria-describedby="exampleHelpText">
+                </label>
+                <label style="text-align:left;">Company or Project Link
+                  <input type="text" placeholder="Web Address or Company Code" aria-describedby="exampleHelpText">
+                </label>
+                <button type="button" class="button" style="display: flex; justify-content: flex-start;left:1em;">Add</button>
+            </div>
+            <div style="padding:1em;height:250px;float:left;" id="colabsBox"></div>
         </div>
       </div>
     </div>

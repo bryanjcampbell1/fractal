@@ -99,11 +99,11 @@
         /*-------------------------------View Profile Data----------------------------------- */
 
         var reviewAverage = 4;
-  
+
         var skills = ["Data Analytics","Marketing","AWS","Snacking"];
 
 
-        var userBio = ["Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned."];
+        var userBio = "Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned.";
         var compensation = ['50', 'USD', true, true]; //first true = accepts equivalent
                                                       //2nd true = Accepts Private Shares
 
@@ -139,14 +139,14 @@
         var singleSkill = skills[i];
         var skillButtonID = "skillButton" + i.toString();
 
-        
-        moreButtons +=  '<div class="cell auto" id="skillButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:150px;text-align:center;">'+singleSkill+'<button class="skillButton" style="float:right;" id='+ skillButtonID +'>x</button>'+'</span>'+'</div>';
-        } 
 
-        
+        moreButtons +=  '<div class="cell auto" id="skillButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:150px;text-align:center;">'+singleSkill+'<button class="skillButton" style="float:right;" id='+ skillButtonID +'>x</button>'+'</span>'+'</div>';
+        }
+
+
         var chosenRate = '<h5>'+ compensation[0] + ' '+ compensation[1] +'/Hour</h5>';
 
- 
+
 
 
         var addProject = "";
@@ -154,29 +154,29 @@
         for(i=0;i<userProjects.length;i++){
           var singleProject = userProjects[i];
           var buttonText = singleProject[0]+" - " + singleProject[1] +" - " + singleProject[2];
-          
-          
+
+
           var projectButtonID = "projectButton" + i.toString();
 
-          
+
           addProject +=  '<div class="cell auto" id="projectButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="projectButton" style="float:right;" id='+ projectButtonID +'>x</button>'+'</span>'+'</div>';
-        } 
+        }
 
         var addLink = "";
 
         for(i=0;i<externalLinks.length;i++){
           var singleLink = externalLinks[i];
           var buttonText = singleLink[0]+" - " + singleLink[1] +" - " + singleLink[2];
-          
-          
+
+
           var linkButtonID = "linkButton" + i.toString();
 
-          
+
           addLink +=  '<div class="cell auto" id="linkButtonContainer'+i.toString()+'" >' +'<span class="warning label" style="width:650px;text-align:center;">'+buttonText+'<button class="linkButton" style="float:right;" id='+ linkButtonID +'>x</button>'+'</span>'+'</div>';
-        } 
+        }
 
 
-        
+
         $("#chosenCurrencyBox").append(chosenRate);
 
         $("#skillsBox").append(moreButtons);
@@ -208,7 +208,7 @@
         });
 
         /*----------------------------Search Profiles-----------------------------------------*/
-       
+
         var searchedProfile1 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
         var searchedProfile2 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
         var searchedProfile3 = ["./pics/khomeni.png","AlwaysSnack",4,"Front End Design, Graphic Design, Legal, Marketing","250 BAE"];
@@ -346,7 +346,7 @@
         /*--------------------------------Your Companies ----------------------------------- */
 
         // 0)  company logo
-        // 1)  header 
+        // 1)  header
         // 2)  website pitch
         // 3)  Whitepaper Link
         // 4)  Roadmap Link
@@ -355,7 +355,7 @@
         // 7)  Team2
         // 8)  Team3
         // 9)  Team4
-        // 10)  Team5 
+        // 10)  Team5
         // 11) Link1
         // 12) Link2
         // 13) Link3
@@ -364,10 +364,10 @@
         // 16) Supply
         // 17) Symbol
         // 18) Type
-        
+
 
         var companyObject1 = ["./pics/job1.png", "Universal Data", "Control your own data without giving up your privacy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"],"250,000,000","FRX","ERC-20" ];
- 
+
       var companyObject2 = ["./pics/job2.png", "Infinity Solutions", "Prototyping need not be a slow and costly process. With Infnty Solutions we make prototypes fast and cheap. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ","whitePaper.com","roadmap.link","mywebsite.com",["./pics/manson.png","Ben - Advisor"],["./pics/daft.png","Jimmy - CTO"],["./pics/khomeni.png","George - CEO"],["./pics/manson.png","Mikey - Design"],["./pics/daft.png","T.Guns - Strategy"] ,["link1.net","ydydydy"],["link2.net","ydydydy"],["link3.net","ydydydy"],["link4.net","ydydydy"],["link5.net","jdjdjdjdjdjdj"],"220,000,000","BTC","ERC-20" ];
 
 
@@ -391,7 +391,7 @@
             var compJobs = [[comp1Job1,comp1Job2,comp1Job3],[comp2Job1,comp2Job2,comp2Job3],[comp3Job1,comp3Job2,comp3Job3]];
 
 
-         
+
 
 
           $("#companiesTopBar").empty();
@@ -400,14 +400,14 @@
 
           for (j = 0; j < companyObjects.length; j++) {
           var company = companyObjects[j];
-          
+
           companyButtons += '<div class="cell auto companyButton" id="companyButton' + j.toString()+ '">'+
                               '<a href="#0" >'+
                                '<img src="' +  company[0]+'" alt="Avatar" style="height:75px; width: 75px;">'+
                               '</a>'+
                               '</div>';
 
-          
+
         }
 
         companyButtons+='<div class="cell auto" style="margin-top:10px;"><a href="#0" id=addCompanyButton><i class="fi-plus" style="font-size: 40px;height:75px; width: 75px;"></i></a></div>';
@@ -452,19 +452,19 @@
                             '<img src="' +  company[0]+'" alt="Avatar" style="border-radius: 50%;height:100px; width: 100px;margin-top: 20px;">'+
                             '<h5>'+company[1]+'</h5></div>';
 
-              
+
 
             }
 
             if(company_object[3] != ""){
              mainLinks += '<a class="expanded button" href="'+company_object[3]+'" >'+'Read the White Paper</a>';
-            } 
+            }
             if(company_object[4] != ""){
              mainLinks += '<a class="expanded button" href="'+company_object[4]+'" >'+'View Website</a>';
-            } 
+            }
             if(1 ==1 ){
              mainLinks += '<a class="expanded button">'+'Read Reviews</a>';
-            } 
+            }
             if(company_object[5] != ""){
              mainLinks += '<a class="expanded button" href="'+company_object[5]+'" >'+'Roadmap</a>';
             }
@@ -474,7 +474,7 @@
                         '<div style="text-align: left; margin-left:20px">'+company_object[2]+
                         '</div>';
 
-      
+
 
 
             id="companyShares">
@@ -519,9 +519,9 @@
 
               }
 
-        
 
-            $("#headerAndPitch").append(pitch);  
+
+            $("#headerAndPitch").append(pitch);
             $("#companyShares").append(sharesInfo);
             $("#companyLogoBox1").append(picLink);
             $("#teamPics").append(newPics);
@@ -538,7 +538,7 @@
 
         for (j = 0; j < companyObjects.length; j++) {
           var company = companyObjects[j];
-          
+
           verticalButton += '<div class="cell small-3 medium-3" style="height: 100px; margin-top:25px;">'+
                               '<a href="#0" class="verticalCompanyButton" id=companyButton'+j.toString()+'>'+
                                '<img src="'+company[0]+'" alt="Avatar" style="height:75px; width: 75px;">'+
@@ -546,17 +546,17 @@
                               '</div>'+
                               '<hr style="margin: 0px;">';
 
-          
+
         }
 
-        $("#verticalCompanyButtonBar").append(verticalButton);   
+        $("#verticalCompanyButtonBar").append(verticalButton);
 
         $(".verticalCompanyButton").click(function() {
           var childID = $(this).attr('id');
           var lastChar = childID[childID.length -1];
           fillTokenizeContent(lastChar);
 
-       
+
         });
 
         if(companyObjects.length != 0){
@@ -566,7 +566,7 @@
           //add message describing how page will look
         }
 
-        
+
         function fillTokenizeContent(x) {
           var selected = companyObjects[x];
 
@@ -577,7 +577,7 @@
         }
 
 
-                 
+
         /*-------------------------------------------------------------------------------- */
 
 
@@ -679,6 +679,9 @@
           $("#CompensationRate").empty();
           $("#skillsBanner").empty();
           $("#ProjectsBox").empty();
+          $("#viewBio").empty();
+
+          
 
           var proj = "";
           proj+='<h5 style="text-decoration: underline;">Companies/Projects/Collaborations</h5>';
@@ -775,6 +778,8 @@
 
 
 
+
+          $("#viewBio").append("<p>"+userBio+"</p>");
           $("#profileBanner").append(banner);
           $("#averageRating").append(avgRating);
           $("#CompensationRate").append(compen);
@@ -944,7 +949,7 @@
         });
 
 
-   
+
       /*-----------------------------*/
 
       $("#addCompanyButton").click(function(){
@@ -989,31 +994,31 @@
     <div class="top-bar" id="example-menu">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li><a href="#0" id=HomeButton >Home</a></li>
-          <li><a href="#0" id=DashboardButton >Dashboard</a></li>
+          <li><a href="#0" id="HomeButton" >Home</a></li>
+          <li><a href="#0" id="DashboardButton" >Dashboard</a></li>
           <li class="has-submenu">
             <a href="#0">Profile</a>
             <ul class="submenu menu vertical" data-submenu>
-              <li><a href="#0" id=ViewProfileButton>View Profile</a></li>
-              <li><a href="#0" id=EditProfileButton>Edit Profile</a></li>
-              <li><a href="#0" id=SearchProfilesButton>Search Profiles</a></li>
+              <li><a href="#0" id="ViewProfileButton">View Profile</a></li>
+              <li><a href="#0" id="EditProfileButton">Edit Profile</a></li>
+              <li><a href="#0" id="SearchProfilesButton">Search Profiles</a></li>
             </ul>
           </li>
 
           <li class="has-submenu">
             <a href="#0">Jobs</a>
             <ul class="submenu menu vertical" data-submenu>
-              <li><a href="#0" id=PostJobsButton>Post Jobs</a></li>
-              <li><a href="#0" id=SearchJobsButton>Search Jobs</a></li>
+              <li><a href="#0" id="PostJobsButton">Post Jobs</a></li>
+              <li><a href="#0" id="SearchJobsButton">Search Jobs</a></li>
             </ul>
           </li>
           <li class="has-submenu">
             <a href="#0">Business</a>
             <ul class="submenu menu vertical" data-submenu>
-              <li><a href="#0" id=YourCompaniesButton>Your Companies</a></li>
-              <li><a href="#0" id=CreateCompanyButton>Create Company Page</a></li>
-              <li><a href="#0" id=SearchCompaniesButton>Search Companies</a></li>
-              <li><a href="#0" id=TokenizeSharesButton>Tokenize Shares</a></li>
+              <li><a href="#0" id="YourCompaniesButton">Your Companies</a></li>
+              <li><a href="#0" id="CreateCompanyButton">Create Company Page</a></li>
+              <li><a href="#0" id="SearchCompaniesButton">Search Companies</a></li>
+              <li><a href="#0" id="TokenizeSharesButton">Tokenize Shares</a></li>
             </ul>
           </li>
         </ul>
@@ -1415,13 +1420,13 @@
       <div class="grid-x" style="height: 500px;">
         <div class="cell small-7 medium-7" style="padding-left:1em;text-align:left;">
           <h5 style="text-decoration: underline;">Bio</h5>
-          <p>
-            "Putin was born in Leningrad during the Soviet Union. He studied law at Leningrad State University, graduating in 1975.[6] Putin was a KGB foreign intelligence officer for 16 years, rising to the rank of Lieutenant Colonel before resigning in 1991 to enter politics in Saint Petersburg. He moved to Moscow in 1996 and joined President Boris Yeltsin's administration, rising quickly through the ranks and becoming Acting President on 31 December 1999, when Yeltsin resigned."
-          </p>
+          <div id="viewBio">
+
+          </div>
         </div>
         <div class="cell small-5 medium-5" style="padding-left:1em;text-align:left;">
           <h5 style="text-decoration: underline;">Reviews</h5>
-          <div id=reviewBox>
+          <div id="reviewBox">
 
           </div>
         </div>
@@ -1454,9 +1459,42 @@
 
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="navMenuItem" id="EditProfilePage" >
       <div class="grid-x">
-        <div class="cell small-10 medium-10" style="height: 1500px;">
+        <div class="cell small-7 medium-7" style="height: 1500px;">
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Profile Picture</h4>
             <img src="./pics/bigHead.png" style="height:150px;width:150px;float:left;"></img>
@@ -1470,34 +1508,11 @@
           </div>
           <div style="padding:1em;height:200px;">
             <h4 style="text-align:left;">Skills</h4>
-            <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">       
+            <input type="text" placeholder="Enter Skills" aria-describedby="exampleHelpText">
               <div class="grid-x" id="skillsBox">
               </div>
           </div>
-          <div id="editCompensation" style="padding:1em;">
-            <h4 style="text-align:left;">Requested Hourly Compensation</h4>
-              <div class="grid-x">
-                <div class="cell small-2 medium-2" >
-                  <input type="text" placeholder="50" style="margin-top:4px;" aria-describedby="exampleHelpText">
-                </div>
-                <div class="cell small-2 medium-2" >
-                  <select>
-                    <option>Currency</option>
-                    <option>All</option>
-                    <option>Private Shares</option>
-                    <option>Ether</option>
-                    <option>USD (MKR)</option>
-                  </select>
-                </div>
-                <div class="cell small-8 medium-8">
-                  <input id="formCheckbox1" type="checkbox" stlye="margin-left:10px;"><label for="formCheckbox1">Accept Alternate Currency of Equivalent Value</label>
-                  <input id="formCheckbox2" type="checkbox"><label for="formCheckbox1">Accept Private Shares</label>
-                </div>
-                <div id="chosenCurrencyBox">
 
-                </div>
-              </div>
-            </div>
           <div style="padding:1em;height:300px;">
             <h4 style="text-align:left;">Add Companies/Projects/Colaborations</h4>
             <label style="text-align:left;">Company or Project Name
@@ -1510,7 +1525,7 @@
           </div>
           <div style="padding:1em;height:250px;" id="colabsBox">
 
-            
+
           </div>
 
           <div style="padding:1em;height:300px;">
@@ -1526,9 +1541,79 @@
           <div style="padding:1em;height:350px;" id="linksBox">
           </div>
         </div>
-        <div class="cell auto" style="height: 1500px;"></div>
+        <div class="cell auto" style="height: 1500px;">
+            <div id="editCompensation" style="padding:1em;">
+            <h5 style="text-align:left;">Requested Hourly Compensation</h5>
+                <div class="grid-x">
+                    <div class="cell small-6 medium-6" >
+                      <input type="text" placeholder="50" style="margin-top:4px;" aria-describedby="exampleHelpText">
+                    </div>
+                    <div class="cell small-6 medium-6" >
+                      <select>
+                        <option>Currency</option>
+                        <option>All</option>
+                        <option>Private Shares</option>
+                        <option>Ether</option>
+                        <option>USD (MKR)</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div style="text-align:left;">
+                    <input id="formCheckbox1" type="checkbox" ><label for="formCheckbox1">Accept Alternate Currency of Equivalent Value</label></input>
+                </div>
+                <div style="text-align:left;">
+                    <input id="formCheckbox2" type="checkbox"><label for="formCheckbox1">Accept Private Shares</label></input>
+                </div>
+                <div id="chosenCurrencyBox" style="text-align:left;"></div>
+
+
+            </div>
+        </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="navMenuItem" id="SearchProfilesPage" >
       <div class="grid-x">
@@ -2092,7 +2177,7 @@
               </tr>
             </thead>
             <tbody  id='searchJobsTable'>
-              
+
 
 
             </tbody>
@@ -2111,7 +2196,7 @@
          <div class="grid-x" style="margin-top:10px;" id="companiesTopBar">
 
 
-           
+
 
 
 
@@ -2134,11 +2219,11 @@
        <div class="cell small-3 medium-3 large-3">
          <div class="grid-x">
            <div class="cell small-6 medium- large-6" id="headerAndPitch">
-             
+
            </div>
            <div class="cell small-6 medium-6 large-6">
              <div style="width:400px; margin-left: 80px;margin-top: 40px;"  id="WhitePaperWebSiteLinks">
-               
+
 
              </div>
            </div>
@@ -2434,7 +2519,7 @@
       <div class="grid-x">
         <div class="cell small-2 medium-2" style="height: 900px;background:gray;">
           <div class="grid-y"  id="verticalCompanyButtonBar">
-            
+
 
 
           </div>

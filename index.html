@@ -8,9 +8,9 @@
 
         /*------------------------------- Dashboard Mock Data ---------------------------------------- */
 
-        var message1 = ["ChesterChetos1", "Workshoping new flavors1", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var message2 = ["ChesterChetos2", "Workshoping new flavors2", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var message3 = ["ChesterChetos3", "Workshoping new flavors3", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message1 = ["ChesterChetos", "Tomato basil?", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message2 = ["Andy Hotfries", "Need new flavor ASAP", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var message3 = ["Sour Patch-Kid", "Workshoping new flavors3", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var message4 = ["ChesterChetos4", "Workshoping new flavors4", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var message5 = ["ChesterChetos5", "Workshoping new flavors5", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var message6 = ["ChesterChetos6", "Workshoping new flavors6", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
@@ -25,11 +25,11 @@
 
 
 
-        var submission1 = ["ffChesterChetos1", "Workshoping new flavors1", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var submission2 = ["ChesterChetos2", "Workshoping new flavors2", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var submission3 = ["ChesterChetos3", "Workshoping new flavors3", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var submission4 = ["ChhhesterChetos4", "Workshoping new flavors4", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
-        var submission5 = ["ChesterChetos5", "Workshoping new flavors5", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var submission1 = ["Chester Cheetos", "Workshoping new flavors1", "Wednesday sounds good"];
+        var submission2 = ["ChesterChetos2", "Did you recieve tokens?", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var submission3 = ["ChesterChetos3", "Sent work on 1-1-19", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var submission4 = ["ChhhesterChetos4", "Need more time with goldfish pretzle add", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
+        var submission5 = ["ChesterChetos5", "Andy Hotfries is the worst", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var submission6 = ["ChdesterChetos6", "Workshoping new flavors6", "Will you be around wednesday night for taste tests?  Requiring 10 more varieties."];
         var submission7 = ["", "", ""];
         var submission8 = ["", "", ""];
@@ -901,6 +901,10 @@
         $("#messagesButton").click(function(){
             $(".mailMenuItem").hide();
             $("#messagesTableBody").empty();
+
+            $(this).css("background-color", "#126195");
+            $("#submitButton").css("background-color", "#1779ba");
+
             var cells;
 
             for (i = 0; i < messages.length; i++) {
@@ -921,6 +925,10 @@
         $("#submitButton").click(function(){
             $(".mailMenuItem").hide();
             $("#submitTableBody").empty();
+
+            $(this).css("background-color", "#126195");
+            $("#messagesButton").css("background-color", "#1779ba");
+
             var cells;
 
             for (i = 0; i < submissions.length; i++) {
@@ -1333,58 +1341,40 @@
            </div>
          </div>
          <div class="cell small-8 medium-8" style="height: 900px;">
-           <div class="grid-x">
+           <div class="grid-x" style="margin-right:1em;">
 
-             <div class="cell small-12 medium-12" style="height: 70px;background-size:cover;background-image: url('./pics/divider3.png');">
-               <div class="grid-x">
+             <div class="cell small-12 medium-12" style="height: 70px;">
+               <div class="grid-x" >
 
-
-                 <div class="cell auto" style="height: 70px;">
-                   <a href="#0" id=messagesButton style="color:black;">
-                     <i class="fi-mail" style="font-size: 40px;"></i>
-                     <h6 style="margin-top: -15px;">Messages</h6>
+                <div class="cell small-2 medium-2 large-2" >
+                   <a href="#0" id="newMessageButton" class="expanded button" style="color:black;height: 70px;border-radius: 8px 0px 0px 8px;">
+                     <i class="fi-plus" style="font-size: 50px;"></i>
                   </a>
                  </div>
-
-                 <div class="cell auto" style="height: 70px;">
-                   <a href="#0" id=submitButton style="color:black;">
-                     <i class="fi-upload" style="font-size: 40px;"></i>
-                     <h6 style="margin-top: -15px;">Submit</h6>
+                 <div class="cell auto">
+                   <a href="#0" id="messagesButton" class="expanded button" style="color:black;height: 70px;background-color:#126195;">
+                     <i class="fi-mail" style="font-size: 50px;"></i>
+                  </a>
+                 </div>
+                 <div class="cell auto">
+                   <a href="#0" id="submitButton" class="expanded button" style="color:black;height: 70px;border-radius: 0px 8px 8px 0px;">
+                     <i class="fi-upload" style="font-size: 50px;"></i>
                     </a>
                  </div>
 
-                 <div class="cell auto" style="height: 70px;">
-                   <a href="#0" id=reviewButton style="color:black;">
-                     <i class="fi-check" style="font-size: 40px;"></i>
-                     <h6 style="margin-top: -15px;">Review</h6>
-                  </a>
 
-                 </div>
-                 <div class="cell auto" style="height: 70px;">
-                   <a href="#0" id=timelineButton style="color:black;">
-                     <i class="fi-clock" style="font-size: 40px;"></i>
-                     <h6 style="margin-top: -15px;">Deadlines</h6>
-                  </a>
-                 </div>
-
-                 <div class="cell auto" style="height: 70px;">
-                   <a href="#0" id=alertsButton style="color:black;">
-                     <i class="fi-alert" style="font-size: 40px;"></i>
-                     <h6 style="margin-top: -15px;">Alerts</h6>
-                   </a>
-                 </div>
                </div>
              </div>
 
-             <div class="cell mailMenuItem" style="height: 500px;margin-top: -5px;" id="messagesTable">
-               <table>
-                <tbody id="messagesTableBody">
+             <div class="cell mailMenuItem" style="height: 500px;margin-top: -3px;" id="messagesTable">
+               <table >
+                <tbody id="messagesTableBody" >
 
                 </tbody>
               </table>
              </div>
 
-             <div class="cell mailMenuItem" style="height: 500px;" id="submitTable">
+             <div class="cell mailMenuItem" style="height: 500px;margin-top: -3px;" id="submitTable">
                <table>
                 <tbody id="submitTableBody">
 
@@ -1392,50 +1382,6 @@
               </table>
              </div>
 
-             <div class="cell mailMenuItem" style="height: 500px;" id="reviewTable">
-               <table>
-                <thead>
-                  <tr>
-                    <th>Job</th>
-                    <th>Freelancer</th>
-                    <th>Description</th>
-                    <th style='text-align:right;'>Time Submitted</th>
-                  </tr>
-                </thead>
-                <tbody id="reviewTableBody">
-
-                </tbody>
-              </table>
-             </div>
-
-             <div class="cell mailMenuItem" style="height: 500px;" id="timelineTable">
-               <table>
-                <thead>
-                  <tr>
-                    <th width="200">Client</th>
-                    <th>Job</th>
-                    <th width="150">Deadline</th>
-                  </tr>
-                </thead>
-                <tbody id="timeTableBody">
-
-                </tbody>
-              </table>
-             </div>
-
-             <div class="cell mailMenuItem" style="height: 500px;" id="alertsTable">
-               <table>
-                <thead>
-                  <tr>
-                    <th width="200">Alerts</th>
-
-                  </tr>
-                </thead>
-                <tbody id="alertTableBody">
-
-                </tbody>
-              </table>
-             </div>
 
            </div>
          </div>
